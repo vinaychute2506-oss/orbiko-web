@@ -223,6 +223,16 @@ export default function ContactPage() {
                     </div>
 
                     <div className="space-y-3">
+                      <label className="text-[10px] uppercase tracking-[0.25em] text-foreground/40 font-bold">Phone Number *</label>
+                      <input 
+                        required 
+                        type="tel" 
+                        placeholder="+91 98765 43210"
+                        className="w-full bg-secondary border border-border/5 px-6 py-4 text-foreground text-base focus:border-primary focus:outline-none transition-all duration-300 placeholder:text-foreground/10" 
+                      />
+                    </div>
+
+                    <div className="space-y-3">
                       <label className="text-[10px] uppercase tracking-[0.25em] text-foreground/40 font-bold">Subject / Service</label>
                       <select 
                         value={service}

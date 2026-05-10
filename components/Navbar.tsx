@@ -151,10 +151,10 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-6 z-10">
             <ThemeToggle />
             <Link
-              href="/contact"
+              href="tel:+919876543210"
               className="bg-primary text-background px-8 py-3.5 text-[10px] uppercase tracking-[0.25em] font-black hover:bg-foreground transition-all duration-300 rounded-sm leading-none inline-block shadow-xl"
             >
-              Consult Now
+              Consult Now: +91 98765 43210
             </Link>
           </div>
 
