@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Container } from "./ui/Container";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "./ThemeToggle";
 
 const services = [
   { name: "Residential Interiors", href: "/services/residential-interiors" },
@@ -146,8 +147,9 @@ export function Navbar() {
             </ul>
           </div>
 
-          {/* RIGHT → CTA */}
-          <div className="hidden md:flex items-center z-10">
+          {/* RIGHT → CTA & Toggle */}
+          <div className="hidden md:flex items-center gap-6 z-10">
+            <ThemeToggle />
             <Link
               href="/contact"
               className="bg-primary text-background px-8 py-3.5 text-[10px] uppercase tracking-[0.25em] font-black hover:bg-foreground transition-all duration-300 rounded-sm leading-none inline-block shadow-xl"
@@ -157,12 +159,15 @@ export function Navbar() {
           </div>
 
           {/* MOBILE BUTTON */}
-          <button
-            className="md:hidden text-foreground p-2 hover:text-primary transition-colors z-10"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-4 z-10">
+            <ThemeToggle />
+            <button
+              className="text-foreground p-2 hover:text-primary transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
 
         </nav>
 

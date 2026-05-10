@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #E5DED4;   /* Warm Stone Beige */
-  --color-foreground: #2A1B15;   /* Deep Espresso Brown */
-  --color-primary: #DC2626;      /* Vibrant Red */
-  --color-secondary: #D9CDBF;    /* Muted Tan Brown */
-  --color-accent: #DC2626;
-  --color-muted: #8B7E74;
-  --color-card: #F2EAE2;         /* Lightest Beige for cards */
-  --color-border: #C9BAAA;       /* Brownish border */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
@@ -25,9 +25,21 @@
   --border: #C9BAAA;
 }
 
+.dark {
+  --background: #1A110E;       /* Dark Espresso Brown */
+  --foreground: #E5DED4;       /* Beige Text */
+  --primary: #DC2626;          /* Keep Red */
+  --secondary: #2A1B15;        /* Deep Brown Surface */
+  --card: #221612;             /* Dark Card */
+  --accent: #DC2626;
+  --muted: #8B7E74;
+  --border: #3A2A25;           /* Subtle Dark Border */
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Base heading styles */
