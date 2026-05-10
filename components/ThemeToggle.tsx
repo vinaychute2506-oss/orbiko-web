@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
+import { Lightbulb } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 
@@ -21,14 +21,18 @@ export function ThemeToggle() {
       className="relative p-2 rounded-full border border-border/10 hover:bg-secondary transition-all duration-300 group"
       aria-label="Toggle theme"
     >
-      <div className="relative w-5 h-5 overflow-hidden">
+      <div className="relative w-5 h-5 flex items-center justify-center">
         <motion.div
-          animate={{ y: theme === "dark" ? -25 : 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col gap-5 items-center"
+          animate={{ 
+            rotate: theme === "dark" ? 180 : 0,
+            scale: theme === "dark" ? 1.1 : 1
+          }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <Sun size={18} className="text-primary" />
-          <Moon size={18} className="text-primary" />
+          <Lightbulb 
+            size={18} 
+            className={`${theme === "dark" ? "text-primary fill-primary" : "text-primary"} transition-all duration-300`} 
+          />
         </motion.div>
       </div>
       
