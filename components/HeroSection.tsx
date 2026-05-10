@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import type { SiteSettings } from "@/lib/api";
+import { ConsultModal } from "./ConsultModal";
 
 const FALLBACK_SLIDES = [
   { headline: "ORBIKO INTERIORS", subheading: "Premium Interior Solutions" },
@@ -20,6 +20,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
   const slides = FALLBACK_SLIDES;
   const videoUrl = settings?.heroVideo ?? null;
   const [current, setCurrent] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -75,15 +76,14 @@ export function HeroSection({ settings }: HeroSectionProps) {
                   View Projects <ArrowRight size={14} />
                 </motion.button>
               </Link>
-              <Link href="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-4 border border-border/20 text-foreground px-10 py-5 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-foreground hover:text-background transition-colors duration-300"
-                >
-                  Inquire Now
-                </motion.button>
-              </Link>
+              <motion.button
+                onClick={() => setIsModalOpen(true)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-4 border border-border/20 text-foreground px-10 py-5 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-foreground hover:text-background transition-colors duration-300"
+              >
+                Inquire Now
+              </motion.button>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -101,6 +101,8 @@ export function HeroSection({ settings }: HeroSectionProps) {
           />
         ))}
       </div>
+
+      <ConsultModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

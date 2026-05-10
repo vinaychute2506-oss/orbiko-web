@@ -7,6 +7,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Container } from "./ui/Container";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
+import { ConsultModal } from "./ConsultModal";
 
 const services = [
   { name: "Residential Interiors", href: "/services/residential-interiors" },
@@ -29,6 +30,7 @@ export function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
@@ -150,12 +152,12 @@ export function Navbar() {
           {/* RIGHT → CTA & Toggle */}
           <div className="hidden md:flex items-center gap-6 z-10">
             <ThemeToggle />
-            <Link
-              href="tel:+919876543210"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="bg-primary text-background px-8 py-3.5 text-[10px] uppercase tracking-[0.25em] font-black hover:bg-foreground transition-all duration-300 rounded-sm leading-none inline-block shadow-xl"
             >
-              Consult Now: +91 98765 43210
-            </Link>
+              Consult Now
+            </button>
           </div>
 
           {/* MOBILE BUTTON */}
@@ -170,6 +172,9 @@ export function Navbar() {
           </div>
 
         </nav>
+
+        {/* Modal */}
+        <ConsultModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
         {/* MOBILE MENU */}
         <AnimatePresence>
