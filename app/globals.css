@@ -25,16 +25,7 @@
   --border: #C9BAAA;
 }
 
-.dark {
-  --background: #1A110E;       /* Dark Espresso Brown */
-  --foreground: #E5DED4;       /* Beige Text */
-  --primary: #DC2626;          /* Keep Red */
-  --secondary: #2A1B15;        /* Deep Brown Surface */
-  --card: #221612;             /* Dark Card */
-  --accent: #DC2626;
-  --muted: #8B7E74;
-  --border: #3A2A25;           /* Subtle Dark Border */
-}
+/* Dark mode variables moved to bottom for specificity */
 
 body {
   background-color: var(--background);
@@ -101,4 +92,16 @@ html {
 
 .animate-fadeIn {
   animation: fadeIn 1.5s ease forwards;
+}
+
+/* Dark Mode Overrides - Placed at bottom for priority */
+html.dark, .dark {
+  --background: #1A110E !important;
+  --foreground: #E5DED4 !important;
+  --primary: #DC2626 !important;
+  --secondary: #2A1B15 !important;
+  --card: #221612 !important;
+  --accent: #DC2626 !important;
+  --muted: #8B7E74 !important;
+  --border: #3A2A25 !important;
 }

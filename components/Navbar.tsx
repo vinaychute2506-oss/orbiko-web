@@ -1,3 +1,4 @@
+// Cleaned up button text
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -156,7 +157,7 @@ export function Navbar() {
               onClick={() => setIsModalOpen(true)}
               className="bg-primary text-background px-8 py-3.5 text-[10px] uppercase tracking-[0.25em] font-black hover:bg-foreground transition-all duration-300 rounded-sm leading-none inline-block shadow-xl"
             >
-              Consult Now
+              Inquire Now
             </button>
           </div>
 
