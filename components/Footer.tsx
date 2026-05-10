@@ -38,16 +38,16 @@ export function Footer() {
         {/* ── Contact ── */}
         <div className="space-y-8">
           <p className="text-[10px] tracking-[0.4em] text-primary/60 font-bold uppercase">
-            Contact
+            Consult Now
           </p>
           <div className="space-y-4">
             <p className="text-foreground/60 text-sm font-light">
-              Pune, India
+              Kondhwa, Pune, India
             </p>
             <p className="text-foreground/60 text-sm font-medium">
               <a href="mailto:hello@orbiko.com" className="hover:text-primary transition-colors duration-300">hello@orbiko.com</a>
             </p>
-            <p className="text-foreground/60 text-sm font-medium">
+            <p className="text-foreground text-lg font-heading font-bold">
               <a href="tel:+919876543210" className="hover:text-primary transition-colors duration-300">+91 98765 43210</a>
             </p>
           </div>

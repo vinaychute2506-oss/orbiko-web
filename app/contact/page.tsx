@@ -80,8 +80,8 @@ export default function ContactPage() {
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-widest text-foreground/40 mb-3 font-bold">Our Office</h4>
-                    <p className="text-foreground text-base leading-relaxed">123 Luxury Avenue<br />Design District, NY 10001</p>
+                    <h4 className="text-[10px] uppercase tracking-widest text-foreground/40 mb-3 font-bold">Our Studio</h4>
+                    <p className="text-foreground text-base leading-relaxed">Stanza Living Austin House<br />Kondhwa, Pune, Maharashtra</p>
                   </div>
                 </div>
 
@@ -102,21 +102,56 @@ export default function ContactPage() {
                     <Phone size={20} />
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-widest text-foreground/40 mb-3 font-bold">Call Us</h4>
-                    <p className="text-foreground text-base font-medium">
-                      <a href="tel:+12345678900" className="hover:text-primary transition-colors">+1 (234) 567-890</a>
+                    <h4 className="text-[10px] uppercase tracking-widest text-foreground/40 mb-3 font-bold">Consult Now</h4>
+                    <p className="text-foreground text-xl font-heading font-bold">
+                      <a href="tel:+919876543210" className="hover:text-primary transition-colors">+91 98765 43210</a>
                     </p>
+                    <p className="text-[10px] text-foreground/30 uppercase tracking-widest mt-2">Available 10 AM — 7 PM</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="pt-12 border-t border-border/5">
-              <h4 className="text-[10px] uppercase tracking-widest text-primary mb-8 font-bold">Follow Us</h4>
+              <h4 className="text-[10px] uppercase tracking-widest text-primary mb-10 font-bold">How We Work</h4>
+              <div className="space-y-8">
+                {[
+                  { step: "01", title: "Discovery Call", desc: "A brief 15-minute call to understand your vision, budget, and timeline." },
+                  { step: "02", title: "Site Consultation", desc: "In-depth space analysis and measurement by our design experts." },
+                  { step: "03", title: "Factory-Finish Execution", desc: "Precision production and seamless installation at your site." },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-6">
+                    <span className="text-primary font-heading font-bold text-lg">{item.step}</span>
+                    <div>
+                      <h5 className="text-foreground text-sm font-bold uppercase tracking-widest mb-2">{item.title}</h5>
+                      <p className="text-foreground/40 text-xs leading-relaxed font-light">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="pt-12 border-t border-border/5">
+              <h4 className="text-[10px] uppercase tracking-widest text-foreground/40 mb-8 font-bold">Follow Us</h4>
               <div className="flex gap-10 text-[10px] font-bold tracking-[0.2em] text-foreground/40">
                 <a href="#" className="hover:text-foreground transition-colors uppercase">Instagram</a>
                 <a href="#" className="hover:text-foreground transition-colors uppercase">LinkedIn</a>
-                <a href="#" className="hover:text-foreground transition-colors uppercase">Twitter</a>
+              </div>
+            </div>
+
+            <div className="pt-12 border-t border-border/5">
+              <h4 className="text-[10px] uppercase tracking-widest text-primary mb-10 font-bold">Quick FAQ</h4>
+              <div className="space-y-6">
+                {[
+                  { q: "Do you offer on-site consultations?", a: "Yes, we provide site visits across Pune to evaluate space and requirements." },
+                  { q: "What is the typical project timeline?", a: "Residential projects usually take 4-8 weeks from design approval to handover." },
+                  { q: "Do you provide factory-made furniture?", a: "Absolutely. All our modular solutions are precision-crafted in our partner factories." },
+                ].map((faq, idx) => (
+                  <div key={idx} className="space-y-2">
+                    <p className="text-foreground text-[10px] font-bold uppercase tracking-wider">{faq.q}</p>
+                    <p className="text-foreground/40 text-xs font-light leading-relaxed">{faq.a}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
