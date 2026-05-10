@@ -71,19 +71,11 @@ export function HeroSection({ settings }: HeroSectionProps) {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-4 bg-primary text-background px-10 py-5 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-foreground transition-colors duration-300 shadow-2xl"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-4 bg-primary text-background px-12 py-6 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-foreground transition-colors duration-300 shadow-2xl"
                 >
-                  View Projects <ArrowRight size={14} />
+                  View Our Portfolio <ArrowRight size={14} />
                 </motion.button>
               </Link>
-              <motion.button
-                onClick={() => setIsModalOpen(true)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-4 border border-border/20 text-foreground px-10 py-5 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-foreground hover:text-background transition-colors duration-300"
-              >
-                Inquire Now
-              </motion.button>
             </div>
           </motion.div>
         </AnimatePresence>

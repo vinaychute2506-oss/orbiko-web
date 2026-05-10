@@ -151,20 +151,12 @@ export function Navbar() {
             </ul>
           </div>
 
-          {/* RIGHT → CTA & Toggle */}
-          <div className="hidden md:flex items-center gap-6 z-10 min-w-[200px] justify-end">
-            <ThemeToggle />
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="bg-primary text-background px-8 py-3.5 text-[10px] uppercase tracking-[0.25em] font-black hover:bg-foreground transition-all duration-300 rounded-sm leading-none inline-block shadow-xl"
-            >
-              Consult Now
-            </button>
+          {/* RIGHT → Spacer (since toggle moved) */}
+          <div className="hidden md:flex items-center z-10 min-w-[50px]">
           </div>
 
           {/* MOBILE BUTTON */}
           <div className="md:hidden flex items-center gap-4 z-10">
-            <ThemeToggle />
             <button
               className="text-foreground p-2 hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -199,34 +191,18 @@ export function Navbar() {
                     >
                       {item.name}
                     </Link>
-                    {item.hasDropdown && (
-                      <div className="mt-6 pl-6 border-l border-primary/20 flex flex-col space-y-6">
-                        {services.map(s => (
-                          <Link
-                            key={s.href}
-                            href={s.href}
-                            className="text-[10px] uppercase tracking-[0.2em] text-foreground/30 hover:text-primary transition-colors"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {s.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
                   </div>
                 ))}
-                <Link
-                  href="/contact"
-                  className="bg-primary text-background p-5 text-center text-[10px] uppercase tracking-[0.25em] font-black shadow-2xl"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Book Consultation
-                </Link>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
 
+      </div>
+      
+      {/* Theme Toggle - Moved to Top Right Corner (Fixed) */}
+      <div className="fixed top-6 right-6 z-[60]">
+        <ThemeToggle />
       </div>
     </header>
   );
