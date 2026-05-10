@@ -38,8 +38,8 @@ export function ProjectCard({ slug, title, location, featuredImage }: ProjectCar
           {location && (
             <p className="text-accent text-sm font-medium tracking-wider uppercase mb-2">{location}</p>
           )}
-          <h3 className="text-white text-2xl font-heading font-medium mb-4">{title}</h3>
-          <div className="flex items-center text-white/80 text-sm gap-2">
+          <h3 className="text-foreground text-2xl font-heading font-medium mb-4">{title}</h3>
+          <div className="flex items-center text-foreground/80 text-sm gap-2">
             View Project <ArrowRight size={16} />
           </div>
         </div>

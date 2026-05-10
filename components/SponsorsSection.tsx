@@ -29,7 +29,7 @@ export function SponsorsSection({ sponsors }: SponsorsSectionProps) {
   const looped = [...logos, ...logos, ...logos];
 
   return (
-    <section className="py-20 bg-black overflow-hidden border-t border-b border-white/5">
+    <section className="py-20 bg-background overflow-hidden border-t border-b border-border/5">
       <div className="flex gap-20 animate-scroll">
         {looped.map((src, i) => (
           <div key={i} className="flex-shrink-0 flex items-center justify-center min-w-[150px]">

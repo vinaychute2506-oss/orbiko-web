@@ -16,9 +16,9 @@ export function ServiceCard({ title, description, icon, link }: ServiceCardProps
   return (
     <motion.div 
       whileHover={{ y: -5 }}
-      className="group p-8 border border-secondary bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300"
+      className="group p-8 border border-secondary bg-foreground hover:shadow-xl hover:shadow-black/5 transition-all duration-300"
     >
-      <div className="w-12 h-12 bg-secondary/50 flex items-center justify-center text-primary mb-6 rounded-sm group-hover:bg-accent group-hover:text-white transition-colors">
+      <div className="w-12 h-12 bg-secondary/50 flex items-center justify-center text-primary mb-6 rounded-sm group-hover:bg-accent group-hover:text-foreground transition-colors">
         {icon}
       </div>
       <h3 className="text-xl font-heading font-semibold mb-4 text-primary">{title}</h3>

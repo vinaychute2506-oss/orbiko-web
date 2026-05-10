@@ -43,18 +43,18 @@ export default async function PortfolioPage({ searchParams }: Props) {
     : allProjects;
 
   return (
-    <div className="bg-black min-h-screen pt-32 pb-24">
+    <div className="bg-background min-h-screen pt-32 pb-24">
       <Container>
         <div className="max-w-4xl mb-16">
-          <span className="text-yellow-500 font-bold tracking-[0.25em] uppercase text-[10px] mb-8 block">
+          <span className="text-primary font-bold tracking-[0.25em] uppercase text-[10px] mb-8 block">
             Selected Works
           </span>
-          <h1 className="text-5xl md:text-8xl font-heading font-semibold text-white mb-10 tracking-tight">
+          <h1 className="text-5xl md:text-8xl font-heading font-semibold text-foreground mb-10 tracking-tight">
             Portfolio.
           </h1>
           
           {/* Filter Navigation */}
-          <div className="flex flex-wrap gap-8 md:gap-12 mt-12 border-b border-white/5 pb-8">
+          <div className="flex flex-wrap gap-8 md:gap-12 mt-12 border-b border-border/5 pb-8">
             {FILTERS.map((f) => {
               const isActive = selected === f.slug || (!f.slug && !selected);
               const href = f.slug ? `/portfolio?type=${f.slug}` : "/portfolio";
@@ -64,12 +64,12 @@ export default async function PortfolioPage({ searchParams }: Props) {
                   key={f.label}
                   href={href}
                   className={`text-[10px] uppercase tracking-[0.25em] font-bold transition-all duration-300 relative pb-4 ${
-                    isActive ? "text-yellow-500" : "text-white/40 hover:text-white"
+                    isActive ? "text-primary" : "text-foreground/40 hover:text-foreground"
                   }`}
                 >
                   {f.label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-yellow-500" />
+                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-primary" />
                   )}
                 </Link>
               );

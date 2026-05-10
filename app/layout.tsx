@@ -15,8 +15,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Orbiko | Premium Architecture & Interior Design",
-  description: "Modern architecture, interior design, and turnkey renovation projects.",
+  title: "Orbiko Interiors | Premium Interior Solutions",
+  description: "Modern interior design, smart space planning, and factory-finish execution. Smart Design. Precision Execution. Timeless Results.",
 };
 
 export default function RootLayout({

@@ -21,7 +21,7 @@ export default function Error({
         <p className="text-muted mb-8">We couldn't load the projects at this time.</p>
         <button
           onClick={() => reset()}
-          className="bg-primary text-white px-6 py-3 uppercase tracking-wide text-sm font-medium hover:bg-primary/90 transition-colors"
+          className="bg-primary text-foreground px-6 py-3 uppercase tracking-wide text-sm font-medium hover:bg-primary/90 transition-colors"
         >
           Try again
         </button>

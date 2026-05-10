@@ -7,9 +7,9 @@ import { useState, useEffect } from "react";
 import type { SiteSettings } from "@/lib/api";
 
 const FALLBACK_SLIDES = [
-  { headline: "Designing Spaces That\nDefine Modern Living", subheading: "Luxury Architecture & Interiors" },
-  { headline: "Crafting Environments\nThat Inspire the Future", subheading: "Bespoke Design Excellence" },
-  { headline: "Where Elegance Meets\nUnmatched Function", subheading: "25 Years of Award-Winning Design" },
+  { headline: "ORBIKO INTERIORS", subheading: "Premium Interior Solutions" },
+  { headline: "Smart Space Planning.\nPrecision Execution.", subheading: "Factory-Level Precision" },
+  { headline: "Modern Luxury.\nTimeless Interiors.", subheading: "Factory-Finish Detailing" },
 ];
 
 interface HeroSectionProps {
@@ -29,7 +29,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
   }, [slides.length]);
 
   return (
-    <section className="relative h-screen min-h-[650px] flex flex-col items-center justify-center bg-black">
+    <section className="relative h-screen min-h-[650px] flex flex-col items-center justify-center bg-background">
       {/* ── Background (Pointer events disabled to allow scroll) ── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {videoUrl ? (
@@ -43,13 +43,13 @@ export function HeroSection({ settings }: HeroSectionProps) {
             <source src={videoUrl} type="video/mp4" />
           </video>
         ) : (
-          <div className="w-full h-full bg-neutral-900" />
+          <div className="w-full h-full bg-secondary" />
         )}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-background/60" />
       </div>
 
       {/* ── Content ── */}
-      <div className="relative z-20 text-center text-white max-w-7xl mx-auto px-6 w-full">
+      <div className="relative z-20 text-center text-foreground max-w-7xl mx-auto px-6 w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -58,7 +58,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
-            <span className="text-yellow-500 text-[10px] md:text-xs uppercase tracking-[0.25em] font-bold block mb-10 md:mb-12">
+            <span className="text-primary text-[10px] md:text-xs uppercase tracking-[0.25em] font-bold block mb-10 md:mb-12">
               {slides[current].subheading}
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-[90px] font-heading font-semibold leading-[1.05] mb-14 md:mb-16 whitespace-pre-line tracking-tight">
@@ -70,7 +70,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-4 bg-yellow-500 text-black px-10 py-5 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-white transition-colors duration-300 shadow-2xl"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-4 bg-primary text-background px-10 py-5 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-foreground transition-colors duration-300 shadow-2xl"
                 >
                   View Projects <ArrowRight size={14} />
                 </motion.button>
@@ -79,7 +79,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-4 border border-white/20 text-white px-10 py-5 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-black transition-colors duration-300"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-4 border border-border/20 text-foreground px-10 py-5 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-foreground hover:text-background transition-colors duration-300"
                 >
                   Inquire Now
                 </motion.button>
@@ -96,7 +96,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
             key={i}
             onClick={() => setCurrent(i)}
             className={`h-[2px] transition-all duration-700 ${
-              i === current ? "bg-yellow-500 w-12" : "bg-white/20 w-6"
+              i === current ? "bg-primary w-12" : "bg-foreground/20 w-6"
             }`}
           />
         ))}

@@ -56,9 +56,9 @@ export default async function PortfolioDetailPage({ params }: Props) {
   const projectType = project.projectFields?.projecttype || "Architecture";
 
   return (
-    <div className="bg-black min-h-screen pb-24">
+    <div className="bg-background min-h-screen pb-24">
       {/* ── Hero image ── */}
-      <div className="w-full h-[70vh] md:h-[85vh] relative overflow-hidden bg-[#111315]">
+      <div className="w-full h-[70vh] md:h-[85vh] relative overflow-hidden bg-secondary">
         {imageSrc ? (
           <img
             src={imageSrc}
@@ -66,26 +66,26 @@ export default async function PortfolioDetailPage({ params }: Props) {
             className="absolute inset-0 w-full h-full object-cover"
           />
         ) : (
-          <div className="absolute inset-0 bg-neutral-900" />
+          <div className="absolute inset-0 bg-secondary" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
 
         <div className="absolute inset-0 flex flex-col justify-end pb-16 md:pb-24">
           <Container>
             <Link
               href="/portfolio"
-              className="inline-flex items-center text-white/40 hover:text-white transition-colors mb-12 text-[10px] uppercase tracking-[0.2em] font-bold"
+              className="inline-flex items-center text-foreground/40 hover:text-foreground transition-colors mb-12 text-[10px] uppercase tracking-[0.2em] font-bold"
             >
               <ArrowLeft size={14} className="mr-2" /> Back to Portfolio
             </Link>
 
             <div className="flex flex-wrap gap-4 mb-6">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-yellow-500 border border-yellow-500/30 px-4 py-1.5 font-bold">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-primary border border-primary/30 px-4 py-1.5 font-bold">
                 {projectType}
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-8xl font-heading font-semibold text-white tracking-tight leading-none">
+            <h1 className="text-5xl md:text-8xl font-heading font-semibold text-foreground tracking-tight leading-none">
               {project.title}
             </h1>
           </Container>
@@ -97,7 +97,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
           {project.content && (
             <div className="max-w-4xl mb-32">
               <div
-                className="text-white/60 text-xl md:text-2xl leading-relaxed font-light prose prose-invert max-w-none"
+                className="text-foreground/60 text-xl md:text-2xl leading-relaxed font-light prose prose-invert max-w-none"
                 dangerouslySetInnerHTML={{ __html: project.content }}
               />
             </div>
@@ -105,8 +105,8 @@ export default async function PortfolioDetailPage({ params }: Props) {
 
           {/* Render the Gallery with up to 5 ACF images */}
           {acfImages.length > 0 && (
-            <div className="pt-12 border-t border-white/5">
-              <span className="text-yellow-500 text-[10px] uppercase tracking-[0.25em] font-bold block mb-12">
+            <div className="pt-12 border-t border-border/5">
+              <span className="text-primary text-[10px] uppercase tracking-[0.25em] font-bold block mb-12">
                 Project Gallery
               </span>
               <Gallery images={acfImages} />

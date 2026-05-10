@@ -5,50 +5,50 @@ import { motion } from "framer-motion";
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white px-6 py-20 border-t border-white/5 mt-auto">
+    <footer className="bg-background text-foreground px-6 py-20 border-t border-border/5 mt-auto">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24">
         
         {/* ── Brand ── */}
         <div className="space-y-6">
           <Link href="/" className="inline-block group">
-            <h2 className="text-2xl font-heading font-light tracking-tight transition-all duration-300 group-hover:text-yellow-500">
-              Orbiko<span className="text-yellow-500 group-hover:text-white transition-colors duration-300">.</span>
+            <h2 className="text-2xl font-heading font-light tracking-tight transition-all duration-300 group-hover:text-primary">
+              Orbiko<span className="text-primary group-hover:text-foreground transition-colors duration-300">.</span>
             </h2>
           </Link>
-          <p className="text-white/40 text-sm leading-relaxed max-w-xs font-light italic">
-            Designing timeless architectural experiences through the marriage of light, space, and soul.
+          <p className="text-foreground/40 text-sm leading-relaxed max-w-xs font-light italic">
+            Smart Interior Design and Precision Execution. Factory-finish detailing for modern luxury living.
           </p>
         </div>
 
         {/* ── Navigation ── */}
         <div className="space-y-8">
-          <p className="text-[10px] tracking-[0.4em] text-yellow-500/60 font-bold uppercase">
+          <p className="text-[10px] tracking-[0.4em] text-primary/60 font-bold uppercase">
             Navigation
           </p>
-          <ul className="grid grid-cols-2 gap-4 text-xs tracking-widest font-bold text-white/40">
-            <li><Link href="/" className="hover:text-yellow-500 transition-colors duration-300 uppercase">Home</Link></li>
-            <li><Link href="/portfolio" className="hover:text-yellow-500 transition-colors duration-300 uppercase">Projects</Link></li>
-            <li><Link href="/services" className="hover:text-yellow-500 transition-colors duration-300 uppercase">Services</Link></li>
-            <li><Link href="/blog" className="hover:text-yellow-500 transition-colors duration-300 uppercase">Journal</Link></li>
-            <li><Link href="/contact" className="hover:text-yellow-500 transition-colors duration-300 uppercase">Contact</Link></li>
-            <li><Link href="/about" className="hover:text-yellow-500 transition-colors duration-300 uppercase">About</Link></li>
+          <ul className="grid grid-cols-2 gap-4 text-xs tracking-widest font-bold text-foreground/40">
+            <li><Link href="/" className="hover:text-primary transition-colors duration-300 uppercase">Home</Link></li>
+            <li><Link href="/portfolio" className="hover:text-primary transition-colors duration-300 uppercase">Projects</Link></li>
+            <li><Link href="/services" className="hover:text-primary transition-colors duration-300 uppercase">Services</Link></li>
+            <li><Link href="/blog" className="hover:text-primary transition-colors duration-300 uppercase">Journal</Link></li>
+            <li><Link href="/contact" className="hover:text-primary transition-colors duration-300 uppercase">Contact</Link></li>
+            <li><Link href="/about" className="hover:text-primary transition-colors duration-300 uppercase">About</Link></li>
           </ul>
         </div>
 
         {/* ── Contact ── */}
         <div className="space-y-8">
-          <p className="text-[10px] tracking-[0.4em] text-yellow-500/60 font-bold uppercase">
+          <p className="text-[10px] tracking-[0.4em] text-primary/60 font-bold uppercase">
             Contact
           </p>
           <div className="space-y-4">
-            <p className="text-white/60 text-sm font-light">
+            <p className="text-foreground/60 text-sm font-light">
               Pune, India
             </p>
-            <p className="text-white/60 text-sm font-medium">
-              <a href="mailto:hello@orbiko.com" className="hover:text-yellow-500 transition-colors duration-300">hello@orbiko.com</a>
+            <p className="text-foreground/60 text-sm font-medium">
+              <a href="mailto:hello@orbiko.com" className="hover:text-primary transition-colors duration-300">hello@orbiko.com</a>
             </p>
-            <p className="text-white/60 text-sm font-medium">
-              <a href="tel:+919876543210" className="hover:text-yellow-500 transition-colors duration-300">+91 98765 43210</a>
+            <p className="text-foreground/60 text-sm font-medium">
+              <a href="tel:+919876543210" className="hover:text-primary transition-colors duration-300">+91 98765 43210</a>
             </p>
           </div>
 
@@ -74,13 +74,13 @@ export function Footer() {
       </div>
 
       {/* ── Bottom Strip ── */}
-      <div className="max-w-7xl mx-auto mt-20 md:mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-        <p className="text-white/20 text-[10px] uppercase tracking-[0.2em] font-bold">
+      <div className="max-w-7xl mx-auto mt-20 md:mt-24 pt-8 border-t border-border/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p className="text-foreground/20 text-[10px] uppercase tracking-[0.2em] font-bold">
           © {new Date().getFullYear()} Orbiko Studio. All rights reserved.
         </p>
         <div className="flex gap-8">
-          <p className="text-white/20 text-[10px] uppercase tracking-[0.2em] font-bold">
-            Designed by <span className="text-white/40">Orbiko Creative</span>
+          <p className="text-foreground/20 text-[10px] uppercase tracking-[0.2em] font-bold">
+            Designed by <span className="text-foreground/40">Orbiko Creative</span>
           </p>
         </div>
       </div>

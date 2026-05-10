@@ -25,21 +25,21 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   if (!services || services.length === 0) return null;
 
   return (
-    <section className="py-16 md:py-24 bg-black border-t border-white/5">
+    <section className="py-16 md:py-24 bg-background border-t border-border/5">
       <Container>
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20 gap-8">
           <div className="max-w-2xl">
-            <span className="text-yellow-500 text-[10px] uppercase tracking-[0.4em] font-bold block mb-8">
-              Expertise
+            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block mb-8">
+              Premium Interior Solutions
             </span>
-            <h2 className="text-4xl md:text-5xl font-heading font-semibold text-white leading-[1.2] tracking-tight">
-              Our Specialized<br />Architecture Services
+            <h2 className="text-4xl md:text-5xl font-heading font-semibold text-foreground leading-[1.2] tracking-tight">
+              Our Interior Expertise
             </h2>
           </div>
           <Link
             href="/services"
-            className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.25em] font-bold text-white/40 hover:text-white transition-colors duration-300"
+            className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.25em] font-bold text-foreground/40 hover:text-foreground transition-colors duration-300"
           >
             Explore All <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
@@ -61,7 +61,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
               >
                 <Link
                   href={`/services/${service.slug}`}
-                  className="group relative block aspect-[4/5] overflow-hidden bg-[#111] rounded-sm shadow-2xl"
+                  className="group relative block aspect-[4/5] overflow-hidden bg-secondary rounded-sm shadow-2xl"
                 >
                   {imageUrl ? (
                     <motion.img
@@ -72,23 +72,23 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                       className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity duration-700 group-hover:opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700"
                     />
                   ) : (
-                    <div className="absolute inset-0 bg-neutral-900 opacity-20" />
+                    <div className="absolute inset-0 bg-secondary opacity-20" />
                   )}
                   
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                   
                   <div className="absolute inset-0 flex flex-col justify-end p-10">
-                    <span className="text-yellow-500/40 text-[10px] uppercase tracking-[0.3em] mb-4 font-black">
+                    <span className="text-primary/40 text-[10px] uppercase tracking-[0.3em] mb-4 font-black">
                       0{i + 1}
                     </span>
-                    <h3 className="text-white font-heading font-medium text-2xl md:text-3xl mb-4 group-hover:text-yellow-500 transition-colors duration-500 leading-tight">
+                    <h3 className="text-foreground font-heading font-medium text-2xl md:text-3xl mb-4 group-hover:text-primary transition-colors duration-500 leading-tight">
                       {service.title}
                     </h3>
-                    <p className="text-white/60 text-sm leading-relaxed mb-8 line-clamp-3 font-light italic">
+                    <p className="text-foreground/60 text-sm leading-relaxed mb-8 line-clamp-3 font-light italic">
                       {service.description}
                     </p>
                     <div className="mt-2">
-                      <span className="inline-flex items-center gap-3 text-white text-[10px] uppercase tracking-[0.25em] font-bold border-b border-white/10 pb-1 group-hover:border-yellow-500 group-hover:text-yellow-500 transition-all duration-500">
+                      <span className="inline-flex items-center gap-3 text-foreground text-[10px] uppercase tracking-[0.25em] font-bold border-b border-border/10 pb-1 group-hover:border-primary group-hover:text-primary transition-all duration-500">
                         Explore <ArrowRight size={12} />
                       </span>
                     </div>

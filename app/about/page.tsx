@@ -7,28 +7,28 @@ import type { Metadata } from "next";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "About Us | Orbiko — Architects & Designers",
-  description: "Learn about the Orbiko philosophy, our history of award-winning design, and the team behind our luxury architectural projects.",
+  title: "About Us | Orbiko — Premium Interior Solutions",
+  description: "Learn about the Orbiko approach, our factory-level precision, and the team behind our premium interior design projects.",
 };
 
 export default async function AboutPage() {
   const settings = await getSiteSettings().catch(() => null);
   const yearsExperience = "25";
-  const aboutText = "At Orbiko, we believe architecture is more than just structures — it’s about creating environments that inspire, function seamlessly, and stand the test of time. Our approach blends modern aesthetics with thoughtful design, ensuring every space reflects both purpose and personality.";
+  const aboutText = "At Orbiko, we believe interiors should feel seamless, functional, and deeply personal. Every project is thoughtfully designed with modern aesthetics, smart space planning, and factory-finish detailing to create spaces that truly elevate everyday living.";
 
   return (
-    <div className="bg-black min-h-screen pb-32">
+    <div className="bg-background min-h-screen pb-32">
       {/* ── Banner ── */}
-      <div className="w-full h-[65vh] relative overflow-hidden bg-black">
+      <div className="w-full h-[65vh] relative overflow-hidden bg-background">
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
-          alt="Orbiko Architecture"
+          src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2070&auto=format&fit=crop"
+          alt="Orbiko Interiors"
           className="absolute inset-0 w-full h-full object-cover grayscale opacity-40"
         />
         <div className="absolute inset-0 flex flex-col justify-end pb-24">
           <Container>
-            <span className="text-yellow-500 text-[10px] uppercase tracking-[0.4em] font-bold block mb-8">Our Legacy</span>
-            <h1 className="text-6xl md:text-8xl font-heading font-semibold text-white tracking-tight leading-none">
+            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block mb-8">Precision. Design. Execution.</span>
+            <h1 className="text-6xl md:text-8xl font-heading font-semibold text-foreground tracking-tight leading-none">
               About Us.
             </h1>
           </Container>
@@ -40,26 +40,29 @@ export default async function AboutPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
             <div className="max-w-xl">
-              <span className="text-yellow-500 text-[10px] uppercase tracking-[0.4em] font-bold block mb-12">Philosophy</span>
-              <h2 className="text-4xl md:text-5xl font-heading font-semibold text-white mb-12 leading-[1.1] tracking-tight">
-                Designing for the future, respecting the past.
+              <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block mb-12">Our Approach</span>
+              <h2 className="text-4xl md:text-5xl font-heading font-semibold text-foreground mb-12 leading-[1.1] tracking-tight">
+                Smart Design. Precision Execution. Timeless Results.
               </h2>
-              <div className="space-y-10 text-white/60 text-lg leading-relaxed font-light italic border-l border-white/10 pl-10">
+              <div className="space-y-10 text-foreground/60 text-lg leading-relaxed font-light italic border-l border-border/10 pl-10">
                 <p>{aboutText}</p>
                 <p>
-                  Founded on the principles of precision and creativity, we have spent over {yearsExperience} years redefining the architectural landscape. Our work is characterized by a commitment to quality materials, sustainable practices, and a relentless pursuit of design innovation.
+                  From residential interiors to commercial spaces and renovations, our team focuses on delivering premium interior solutions with transparent execution, modern functionality, and attention to every detail.
+                </p>
+                <p>
+                  With in-house factory support and skilled execution teams, Orbiko ensures better quality control, smoother workflow, and precision-crafted finishes across every project.
                 </p>
               </div>
             </div>
-            <div className="relative aspect-[4/5] bg-[#111] rounded-sm overflow-hidden group">
+            <div className="relative aspect-[4/5] bg-secondary rounded-sm overflow-hidden group">
               <img
                 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
-                alt="Architecture detail"
+                alt="Factory-Finish Detailing"
                 className="absolute inset-0 w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
               />
-              <div className="absolute top-12 right-12 bg-yellow-500 text-black p-10 text-center min-w-[160px] shadow-2xl">
-                <p className="text-5xl font-heading font-bold leading-none">{yearsExperience}</p>
-                <p className="text-[10px] uppercase tracking-widest mt-4 font-bold">Years of<br />Excellence</p>
+              <div className="absolute top-12 right-12 bg-primary text-background p-10 text-center min-w-[160px] shadow-2xl">
+                <p className="text-4xl font-heading font-bold leading-none">Precision</p>
+                <p className="text-[10px] uppercase tracking-widest mt-4 font-bold">Factory-Level<br />Execution</p>
               </div>
             </div>
           </div>
@@ -67,21 +70,21 @@ export default async function AboutPage() {
       </section>
 
       {/* ── Stats ── */}
-      <section className="py-32 bg-[#0a0a0a] border-y border-white/5">
+      <section className="py-32 bg-secondary border-y border-border/5">
         <Container>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-16 md:gap-20">
             {[
-              { icon: <Globe2 className="text-yellow-500" size={24} />, label: "Global Projects", val: "150+" },
-              { icon: <Trophy className="text-yellow-500" size={24} />, label: "Design Awards", val: "42" },
-              { icon: <Users className="text-yellow-500" size={24} />, label: "Creative Minds", val: "28" },
-              { icon: <Sparkles className="text-yellow-500" size={24} />, label: "Client Love", val: "99%" },
+              { icon: <Sparkles className="text-primary" size={24} />, label: "Factory-Level Precision", val: "Elite" },
+              { icon: <Globe2 className="text-primary" size={24} />, label: "Interior Consultations", val: "500+" },
+              { icon: <Trophy className="text-primary" size={24} />, label: "Transparent Process", val: "Verified" },
+              { icon: <Users className="text-primary" size={24} />, label: "Design & Execution Experts", val: "12+" },
             ].map((s, i) => (
               <div key={i} className="text-center group">
-                <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mx-auto mb-10 group-hover:bg-yellow-500/10 group-hover:border-yellow-500/20 transition-all duration-500">
+                <div className="w-16 h-16 rounded-full border border-border/10 flex items-center justify-center mx-auto mb-10 group-hover:bg-primary/10 group-hover:border-primary/20 transition-all duration-500">
                   {s.icon}
                 </div>
-                <p className="text-4xl font-heading font-bold text-white mb-4 tracking-tighter">{s.val}</p>
-                <p className="text-[10px] uppercase tracking-widest text-white/30 font-bold">{s.label}</p>
+                <p className="text-4xl font-heading font-bold text-foreground mb-4 tracking-tighter">{s.val}</p>
+                <p className="text-[10px] uppercase tracking-widest text-foreground/30 font-bold">{s.label}</p>
               </div>
             ))}
           </div>
@@ -91,19 +94,19 @@ export default async function AboutPage() {
       {/* ── CTA ── */}
       <section className="py-32">
         <Container>
-          <div className="bg-yellow-500 p-16 md:p-32 text-center relative overflow-hidden group">
+          <div className="bg-primary p-16 md:p-32 text-center relative overflow-hidden group">
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-7xl font-heading font-bold text-black mb-12 tracking-tighter uppercase leading-none">
-                Want to work with us?
+              <h2 className="text-4xl md:text-7xl font-heading font-bold text-background mb-12 tracking-tighter uppercase leading-none">
+                Partner With Orbiko
               </h2>
-              <p className="text-black/60 max-w-2xl mx-auto mb-16 text-xl leading-relaxed font-medium">
-                We are always looking for exceptional talent and visionary clients. Whether you have a project or want to join our team, we'd love to hear from you.
+              <p className="text-background/60 max-w-3xl mx-auto mb-16 text-xl leading-relaxed font-medium">
+                Orbiko also collaborates with interior designers, decorators, contractors, and project consultants by providing factory support, modular production, and precision-crafted execution solutions.
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-6 bg-black text-white px-12 py-5 text-[10px] uppercase tracking-[0.25em] font-bold hover:bg-zinc-900 transition-all duration-300 shadow-xl"
+                className="inline-flex items-center gap-6 bg-background text-foreground px-12 py-5 text-[10px] uppercase tracking-[0.25em] font-bold hover:bg-secondary transition-all duration-300 shadow-xl"
               >
-                Get in Touch <ArrowRight size={20} />
+                Explore Factory Support <ArrowRight size={20} />
               </Link>
             </div>
           </div>

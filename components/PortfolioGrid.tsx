@@ -24,7 +24,7 @@ export function PortfolioGrid({ projects, selectedFilter }: PortfolioGridProps) 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="text-center py-24 text-white/40"
+            className="text-center py-24 text-foreground/40"
           >
             <p className="text-lg mb-2 tracking-widest uppercase text-xs">No Projects Found</p>
             <p className="text-[10px] uppercase tracking-[0.2em]">Try a different filter or check back later.</p>
@@ -58,7 +58,7 @@ export function PortfolioGrid({ projects, selectedFilter }: PortfolioGridProps) 
                   className="group"
                 >
                   <div 
-                    className="block relative aspect-[4/5] overflow-hidden bg-[#111] rounded-sm cursor-pointer"
+                    className="block relative aspect-[4/5] overflow-hidden bg-secondary rounded-sm cursor-pointer"
                     onClick={() => {
                       // Only redirect to filter if clicking the label specifically? 
                       // Actually, let's keep the user's logic but make it feel premium.
@@ -74,7 +74,7 @@ export function PortfolioGrid({ projects, selectedFilter }: PortfolioGridProps) 
                         className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100"
                       />
                     ) : (
-                      <div className="absolute inset-0 bg-neutral-900" />
+                      <div className="absolute inset-0 bg-secondary" />
                     )}
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
@@ -88,13 +88,13 @@ export function PortfolioGrid({ projects, selectedFilter }: PortfolioGridProps) 
                             e.stopPropagation();
                             if (typeSlug) router.push(`/portfolio?type=${typeSlug}`);
                           }}
-                          className="text-yellow-500 text-[10px] uppercase tracking-[0.25em] font-bold flex items-center gap-2"
+                          className="text-primary text-[10px] uppercase tracking-[0.25em] font-bold flex items-center gap-2"
                         >
                           {typeName}
                         </motion.button>
                       </div>
                       <Link href={`/portfolio/${slug}`} onClick={(e) => e.stopPropagation()}>
-                        <h3 className="text-white font-heading font-medium text-2xl md:text-3xl group-hover:text-yellow-500 transition-colors duration-500 leading-tight">
+                        <h3 className="text-foreground font-heading font-medium text-2xl md:text-3xl group-hover:text-primary transition-colors duration-500 leading-tight">
                           {title}
                         </h3>
                       </Link>

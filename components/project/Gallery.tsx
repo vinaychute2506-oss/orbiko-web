@@ -43,7 +43,7 @@ export default function Gallery({ images }: GalleryProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="break-inside-avoid group relative overflow-hidden rounded-sm cursor-pointer bg-[#111315]"
+              className="break-inside-avoid group relative overflow-hidden rounded-sm cursor-pointer bg-secondary"
               onClick={() => setSelectedIndex(i)}
             >
               <div className="relative w-full aspect-[4/3]">
@@ -59,10 +59,10 @@ export default function Gallery({ images }: GalleryProps) {
               {(item.title || item.caption) && (
                 <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/80 via-transparent to-transparent">
                   {item.title && (
-                    <p className="text-white font-heading font-medium text-sm mb-1">{item.title}</p>
+                    <p className="text-foreground font-heading font-medium text-sm mb-1">{item.title}</p>
                   )}
                   {item.caption && (
-                    <p className="text-white/60 text-xs leading-relaxed">{item.caption}</p>
+                    <p className="text-foreground/60 text-xs leading-relaxed">{item.caption}</p>
                   )}
                 </div>
               )}
@@ -77,18 +77,18 @@ export default function Gallery({ images }: GalleryProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/95 backdrop-blur-md"
+            className="fixed inset-0 z-[10000] flex items-center justify-center bg-background/95 backdrop-blur-md"
             onClick={() => setSelectedIndex(null)}
           >
             <button
-              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-[10001] p-2"
+              className="absolute top-6 right-6 text-foreground/50 hover:text-foreground transition-colors z-[10001] p-2"
               onClick={() => setSelectedIndex(null)}
             >
               <X size={32} />
             </button>
 
             <button
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-white z-[10001]"
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-foreground/40 hover:text-foreground z-[10001]"
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedIndex((prev) => (prev! - 1 + images.length) % images.length);
@@ -98,7 +98,7 @@ export default function Gallery({ images }: GalleryProps) {
             </button>
 
             <button
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-white z-[10001]"
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-foreground/40 hover:text-foreground z-[10001]"
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedIndex((prev) => (prev! + 1) % images.length);

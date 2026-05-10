@@ -3,13 +3,13 @@ const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
 // ─── Dummy Data for Demo Mode ──────────────────────────────────────────────────
 const DUMMY_DATA = {
   settings: {
-    title: "Orbiko",
-    description: "Premium Architecture & Interior Design Studio",
+    title: "Orbiko Interiors",
+    description: "Premium Interior Solutions",
     heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-architect-working-on-a-blueprint-4112-large.mp4",
   },
   home: {
-    title: "Orbiko",
-    tagline: "Defining spaces with precision and soul.",
+    title: "Orbiko Interiors",
+    tagline: "Smart Design. Precision Execution. Timeless Results.",
     heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-architect-working-on-a-blueprint-4112-large.mp4",
   },
   projects: [
@@ -48,22 +48,22 @@ const DUMMY_DATA = {
   ],
   services: [
     {
-      title: "Architectural Design",
-      slug: "architectural-design",
-      description: "Comprehensive architectural services from concept to completion, ensuring structural integrity and aesthetic excellence.",
-      backgroundImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1200",
-    },
-    {
-      title: "Interior Styling",
-      slug: "interior-styling",
-      description: "Curating bespoke interiors that reflect personality and purpose, utilizing premium materials and artisanal finishes.",
+      title: "Residential Interiors",
+      slug: "residential-interiors",
+      description: "Modern home interiors designed with smart layouts, premium finishes, seamless storage solutions, and factory-level precision detailing.",
       backgroundImage: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200",
     },
     {
-      title: "Urban Planning",
-      slug: "urban-planning",
-      description: "Designing sustainable and functional urban environments that enhance community living and connectivity.",
-      backgroundImage: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=1200",
+      title: "Commercial Interiors",
+      slug: "commercial-interiors",
+      description: "Office, café, showroom, and workspace interiors designed to enhance productivity, customer experience, and brand identity.",
+      backgroundImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
+    },
+    {
+      title: "Turnkey Renovation Solutions",
+      slug: "turnkey-renovations",
+      description: "Upgrade outdated spaces with modern layouts, premium finishes, improved functionality, and seamless end-to-end execution.",
+      backgroundImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1200",
     }
   ],
   posts: [

@@ -21,7 +21,7 @@ export default function Error({
         <p className="text-muted mb-8">We encountered an error while loading the portfolio.</p>
         <button
           onClick={() => reset()}
-          className="bg-accent text-white px-8 py-3 uppercase tracking-widest text-xs font-medium hover:bg-accent/80 transition-colors"
+          className="bg-accent text-foreground px-8 py-3 uppercase tracking-widest text-xs font-medium hover:bg-accent/80 transition-colors"
         >
           Try again
         </button>
