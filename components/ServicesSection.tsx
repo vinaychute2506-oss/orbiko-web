@@ -46,7 +46,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {services.map((service, i) => {
             const imageUrl = service.backgroundImage || service.featuredImage?.node?.sourceUrl;
 

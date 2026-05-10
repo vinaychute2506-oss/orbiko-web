@@ -31,7 +31,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
   }, [slides.length]);
 
   return (
-    <section className="relative h-screen min-h-[650px] flex flex-col items-center justify-center bg-background">
+    <section className="relative h-screen min-h-[100dvh] md:min-h-[650px] flex flex-col items-center justify-center bg-background">
       {/* ── Background (Pointer events disabled to allow scroll) ── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {videoUrl ? (

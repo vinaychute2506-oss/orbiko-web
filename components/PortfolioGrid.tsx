@@ -36,7 +36,7 @@ export function PortfolioGrid({ projects, selectedFilter }: PortfolioGridProps) 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
           >
             {projectList.map((project: any, i: number) => {
               const title = project.title || "";

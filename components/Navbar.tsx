@@ -191,6 +191,20 @@ export function Navbar() {
                     >
                       {item.name}
                     </Link>
+                    {item.hasDropdown && (
+                      <div className="mt-6 pl-6 border-l border-primary/20 flex flex-col space-y-6">
+                        {services.map(s => (
+                          <Link
+                            key={s.href}
+                            href={s.href}
+                            className="text-[10px] uppercase tracking-[0.2em] text-foreground/30 hover:text-primary transition-colors"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {s.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -200,8 +214,8 @@ export function Navbar() {
 
       </div>
       
-      {/* Theme Toggle - Moved to Top Right Corner (Fixed) */}
-      <div className="fixed top-6 right-6 z-[60]">
+      {/* Theme Toggle - Repositioned to avoid overlap on mobile */}
+      <div className="fixed top-5 right-20 md:top-6 md:right-6 z-[60]">
         <ThemeToggle />
       </div>
     </header>

@@ -36,10 +36,6 @@ export function ThemeToggle() {
         </motion.div>
       </div>
       
-      {/* Tooltip-like effect */}
-      <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-foreground text-background text-[8px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap font-bold">
-        {theme === "dark" ? "Light Mode" : "Dark Mode"}
-      </span>
     </button>
   );
 }
