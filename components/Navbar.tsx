@@ -72,15 +72,16 @@ export function Navbar() {
         <nav className="flex items-center justify-between w-full">
 
           {/* LEFT → LOGO */}
-          <div className="flex items-center z-10">
-            <Link href="/" className="text-xl font-bold tracking-[0.2em] uppercase text-primary flex items-center leading-none hover:opacity-80 transition-opacity">
-              ORBIKO<span className="text-foreground">.</span>
+          <div className="flex items-center z-10 min-w-[150px]">
+            <Link href="/" className="text-xl font-bold tracking-[0.2em] uppercase flex items-center leading-none hover:opacity-80 transition-opacity">
+              <span className="text-primary dark:text-foreground">ORBIKO</span>
+              <span className="text-foreground dark:text-primary">.</span>
             </Link>
           </div>
 
-          {/* CENTER → DESKTOP NAV (Absolute positioned for perfect center) */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 items-center">
-            <ul className="flex items-center gap-2 lg:gap-4">
+          {/* CENTER → DESKTOP NAV (Using flexible layout to prevent overlap) */}
+          <div className="hidden md:flex flex-grow justify-center items-center px-4">
+            <ul className="flex items-center gap-1 lg:gap-4">
               {navigation.map((item) =>
                 item.hasDropdown ? (
                   <li 
@@ -151,7 +152,7 @@ export function Navbar() {
           </div>
 
           {/* RIGHT → CTA & Toggle */}
-          <div className="hidden md:flex items-center gap-6 z-10">
+          <div className="hidden md:flex items-center gap-6 z-10 min-w-[200px] justify-end">
             <ThemeToggle />
             <button
               onClick={() => setIsModalOpen(true)}
