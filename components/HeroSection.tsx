@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ConsultModal } from "./ConsultModal";
+import { SiteSettings } from "@/lib/api";
 
 const FALLBACK_SLIDES = [
   { headline: "ORBIKO INTERIORS", subheading: "Premium Interior Solutions" },
