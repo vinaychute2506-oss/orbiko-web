@@ -73,8 +73,8 @@ export function Navbar() {
 
           {/* LEFT → LOGO */}
           <div className="flex items-center z-10">
-            <Link href="/" className="text-xl font-bold tracking-[0.2em] uppercase text-foreground flex items-center leading-none hover:opacity-80 transition-opacity">
-              ORBIKO<span className="text-primary">.</span>
+            <Link href="/" className="text-xl font-bold tracking-[0.2em] uppercase text-primary flex items-center leading-none hover:opacity-80 transition-opacity">
+              ORBIKO<span className="text-foreground">.</span>
             </Link>
           </div>
 
@@ -157,7 +157,7 @@ export function Navbar() {
               onClick={() => setIsModalOpen(true)}
               className="bg-primary text-background px-8 py-3.5 text-[10px] uppercase tracking-[0.25em] font-black hover:bg-foreground transition-all duration-300 rounded-sm leading-none inline-block shadow-xl"
             >
-              Inquire Now
+              Consult Now
             </button>
           </div>
 
