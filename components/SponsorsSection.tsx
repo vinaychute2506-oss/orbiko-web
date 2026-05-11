@@ -32,11 +32,11 @@ export function SponsorsSection({ sponsors }: SponsorsSectionProps) {
     <section className="py-20 bg-background overflow-hidden border-t border-b border-border/5">
       <div className="flex gap-20 animate-scroll">
         {looped.map((src, i) => (
-          <div key={i} className="flex-shrink-0 flex items-center justify-center min-w-[150px]">
+          <div key={i} className="flex-shrink-0 flex items-center justify-center min-w-[200px]">
             <img
               src={src}
               alt="Partner Logo"
-              className="h-10 md:h-12 object-contain opacity-40 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500"
+              className="h-16 md:h-20 object-contain"
             />
           </div>
         ))}
