@@ -21,7 +21,7 @@ export default async function AboutPage() {
       {/* Visual Header Banner Area */}
       <div className="w-full h-[60vh] relative overflow-hidden bg-background border-b border-border/10">
         <img
-          src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2070&auto=format&fit=crop"
+          src="/images/about_banner.png"
           alt="Orbiko Interiors"
           className="absolute inset-0 w-full h-full object-cover grayscale opacity-[0.25]"
         />
@@ -69,7 +69,7 @@ export default async function AboutPage() {
             {/* Right Visual Image & Custom Absolute Overlay Panel */}
             <div className="relative aspect-[4/5] bg-card border border-border/10 overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
+                src="/images/craftsmanship.png"
                 alt="Factory-Finish Detailing"
                 className="absolute inset-0 w-full h-full object-cover grayscale opacity-75"
               />

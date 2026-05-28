@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 };
 
 const FALLBACK_IMAGES = [
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
+  "/images/commercial_service.png",
+  "/images/residential_service.png",
+  "/images/turnkey_service.png",
 ];
 
 export default async function ServicesPage() {

@@ -16,19 +16,19 @@ const DUMMY_DATA = {
     {
       title: "Modernist Villa",
       slug: "modernist-villa",
-      featuredImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
+      featuredImage: "/images/about_banner.png",
       projectType: "Residential",
       content: "A stunning modernist villa focused on open spaces and natural light.",
       projectFields: {
         projecttype: "Residential",
-        image1: { node: { sourceUrl: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200" } },
-        image2: { node: { sourceUrl: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200" } },
+        image1: { node: { sourceUrl: "/images/residential_service.png" } },
+        image2: { node: { sourceUrl: "/images/turnkey_service.png" } },
       },
     },
     {
       title: "Corporate Oasis",
       slug: "corporate-oasis",
-      featuredImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
+      featuredImage: "/images/commercial_service.png",
       projectType: "Commercial",
       content: "Redefining the workplace with biophilic design elements.",
       projectFields: {
@@ -38,7 +38,7 @@ const DUMMY_DATA = {
     {
       title: "Luxe Penthouse",
       slug: "luxe-penthouse",
-      featuredImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200",
+      featuredImage: "/images/residential_service.png",
       projectType: "Interior",
       content: "High-end interior design for a luxury penthouse in the heart of the city.",
       projectFields: {
@@ -51,19 +51,19 @@ const DUMMY_DATA = {
       title: "Residential Interiors",
       slug: "residential-interiors",
       description: "Modern home interiors designed with smart layouts, premium finishes, seamless storage solutions, and factory-level precision detailing.",
-      backgroundImage: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200",
+      backgroundImage: "/images/residential_service.png",
     },
     {
       title: "Commercial Interiors",
       slug: "commercial-interiors",
       description: "Office, café, showroom, and workspace interiors designed to enhance productivity, customer experience, and brand identity.",
-      backgroundImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
+      backgroundImage: "/images/commercial_service.png",
     },
     {
       title: "Turnkey Renovation Solutions",
       slug: "turnkey-renovations",
       description: "Upgrade outdated spaces with modern layouts, premium finishes, improved functionality, and seamless end-to-end execution.",
-      backgroundImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1200",
+      backgroundImage: "/images/turnkey_service.png",
     }
   ],
   posts: [
