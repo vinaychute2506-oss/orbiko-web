@@ -32,7 +32,7 @@ interface HeroSectionProps {
 export function HeroSection({ settings }: HeroSectionProps) {
   const slides = HERO_SLIDES;
   // Use settings video if available, else standard elegant loop
-  const videoUrl = settings?.heroVideo ?? "https://assets.mixkit.co/videos/preview/mixkit-architect-working-on-a-blueprint-4112-large.mp4";
+  const videoUrl = settings?.heroVideo ?? "/videos/hero_video.mp4";
   const [current, setCurrent] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -53,7 +53,7 @@ export function HeroSection({ settings }: HeroSectionProps) {
             muted
             loop
             playsInline
-            className="w-full h-full object-cover opacity-[0.25]"
+            className="w-full h-full object-cover opacity-[0.4]"
           >
             <source src={videoUrl} type="video/mp4" />
           </video>
