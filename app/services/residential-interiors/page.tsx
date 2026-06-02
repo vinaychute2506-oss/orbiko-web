@@ -72,13 +72,18 @@ export default function ResidentialInteriorsPage() {
           {/* Left: Overview details */}
           <div className="lg:col-span-8 space-y-16">
             <div className="space-y-6">
-              <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block">Overview</span>
+              <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block">Service Overview</span>
               <h2 className="text-3xl md:text-5xl font-heading font-light text-foreground leading-[1.15] tracking-tight">
                 Designed For Comfort. Engineered For Perfection.
               </h2>
-              <p className="text-foreground/75 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20">
-                At Orbiko, we build custom home interiors that pair aesthetic minimalism with state-of-the-art modular engineering. Every kitchen panel, master wardrobe, and TV unit is fabricated to factory-level standards before being installed on site.
-              </p>
+              <div className="space-y-4 text-foreground/75 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20">
+                <p>
+                  Transform your home with thoughtfully designed interiors that combine modern aesthetics, smart space planning, premium materials, and factory-finish craftsmanship.
+                </p>
+                <p>
+                  From concept design and realistic 3D visualizations to manufacturing and installation, Orbiko manages every stage in-house to ensure superior quality, complete transparency, and flawless execution.
+                </p>
+              </div>
             </div>
 
             {/* Slider showcase block representing horizontal sliders */}
@@ -151,24 +156,57 @@ export default function ResidentialInteriorsPage() {
 
           </div>
 
-          {/* Right sticky sidebar CTA */}
-          <div className="lg:col-span-4 lg:sticky lg:top-40 h-fit space-y-8">
+          {/* Right sticky sidebar CTA and What We Deliver */}
+          <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit space-y-8">
+            
+            {/* What We Deliver Card */}
             <div className="bg-card border border-border/10 p-10 rounded-sm shadow-xl space-y-8">
-              <div className="flex items-center gap-3">
-                <Shield size={18} className="text-primary" />
-                <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-foreground">Design Standards</span>
+              <div>
+                <span className="text-primary text-[9px] uppercase tracking-[0.2em] font-bold block mb-4">Value Checklist</span>
+                <h3 className="text-xl font-heading font-semibold text-foreground tracking-tight">What We Deliver</h3>
               </div>
-              <h3 className="text-xl font-heading font-medium text-foreground tracking-tight">Schedule A Consultation</h3>
-              <p className="text-foreground/60 text-xs leading-relaxed font-light">
-                Assess site dimensions with our supervisors, map out bespoke layouts, and get a completely itemized budget estimation.
+              
+              <ul className="space-y-4 text-xs font-light text-foreground/80 leading-relaxed">
+                {[
+                  "Detailed Design Concepts & 3D Visuals",
+                  "Smart Storage & Space Optimization",
+                  "Premium Material Selection",
+                  "End-to-End Project Management",
+                  "Factory-Finish Modular Solutions",
+                  "Precision Installation & Final Handover"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="pt-4 border-t border-border/10 text-center">
+                <p className="text-[10px] uppercase tracking-widest font-extrabold text-primary">
+                  10-Year Warranty
+                </p>
+                <p className="text-[9px] uppercase tracking-widest font-bold text-foreground/45 mt-1">
+                  45-Day Delivery Assurance
+                </p>
+              </div>
+            </div>
+
+            {/* Callback Card */}
+            <div className="bg-foreground text-background p-10 rounded-sm shadow-xl space-y-6">
+              <h3 className="text-lg font-heading font-medium text-background tracking-tight">Schedule A Consultation</h3>
+              <p className="text-background/60 text-xs leading-relaxed font-light">
+                Assess site dimensions with our supervisors, map out layouts, and get a completely itemized budget estimation.
               </p>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="w-full inline-flex items-center justify-between bg-primary text-background border border-primary px-8 py-4.5 text-[9px] uppercase tracking-[0.2em] font-bold hover:bg-transparent hover:text-primary transition-all duration-300 shadow-lg"
+                className="w-full inline-flex items-center justify-between bg-primary text-background border border-primary px-6 py-4 text-[9px] uppercase tracking-[0.2em] font-bold hover:bg-transparent hover:text-primary transition-all duration-300"
               >
-                Book Free Site Audit <ArrowRight size={14} />
+                <span>Book Free Site Audit</span>
+                <ArrowRight size={14} />
               </button>
             </div>
+
           </div>
 
         </div>

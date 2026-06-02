@@ -22,15 +22,6 @@ export interface Project {
   };
 }
 
-export interface BlogPost {
-  title: string;
-  slug: string;
-  date: string;
-  featuredImage: string | null;
-  excerpt?: string | null;
-  content?: string | null;
-  category?: string;
-}
 
 export interface Service {
   title: string;
@@ -105,15 +96,117 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    title: "Corporate Oasis",
-    slug: "corporate-oasis",
+    title: "Vihaan Heart and Super specialty Hospital",
+    slug: "vihaan-heart-hospital",
     featuredImage: "/images/commercial_hero.png",
-    projectType: "Commercial",
-    content: "Modern corporate workspace desking, acoustic pods, and visual showrooms configured with modular partitions and premium walnut panels.",
+    projectType: "Healthcare",
+    content: "A state-of-the-art 42,000 Sq. ft. healthcare facility featuring optimized patient flow layouts, sterile environments, premium wall cladding, and integrated acoustic ceiling configurations to promote patient healing and operational efficiency.",
     projectFields: {
       projecttype: "Commercial",
       image1: { node: { sourceUrl: "/images/commercial_hero.png" } },
+      image2: { node: { sourceUrl: "/images/commercial_service.png" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Commercial", slug: "commercial" }
+      ]
+    }
+  },
+  {
+    title: "Indiabulls, Delhi",
+    slug: "indiabulls-delhi",
+    featuredImage: "/images/commercial_service.png",
+    projectType: "Corporate Office",
+    content: "Over 25,000+ Sq. ft. of modern corporate interiors in Delhi. Outfitted with high-density open layout desking, integrated wire-management raceways, smart acoustic partition booths, and custom premium veneer boardrooms.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/commercial_service.png" } },
       image2: { node: { sourceUrl: "/images/about_partner.png" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Commercial", slug: "commercial" }
+      ]
+    }
+  },
+  {
+    title: "SDM Ayurveda College Bangalore",
+    slug: "sdm-ayurveda-college",
+    featuredImage: "/images/about_partner.png",
+    projectType: "Institutional",
+    content: "Comprehensive educational and institutional interior design completed for the SDM Ayurveda College in Bangalore. Includes custom wooden lecture theater seating, holistic lobby design, and spacious administrative office configurations.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/about_partner.png" } },
+      image2: { node: { sourceUrl: "/images/about_hero.png" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Commercial", slug: "commercial" }
+      ]
+    }
+  },
+  {
+    title: "Amoeba Game Zone Pune, Gurgaon, Noida & Kolkata",
+    slug: "amoeba-game-zone",
+    featuredImage: "/images/turnkey_hero_after.png",
+    projectType: "Gaming & Entertainment",
+    content: "A multi-city gaming and family entertainment arena spanning over 20,000+ Sq. ft. in each location (Pune, Gurgaon, Noida, Kolkata). Features high-load custom steel partition frames, ambient LED strip channels, and heavy-duty, commercial-grade acoustic ceilings.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/turnkey_hero_after.png" } },
+      image2: { node: { sourceUrl: "/images/home_hero.png" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Commercial", slug: "commercial" }
+      ]
+    }
+  },
+  {
+    title: "Aqua Retreat Falta, WB",
+    slug: "aqua-retreat-falta",
+    featuredImage: "/images/home_hero.png",
+    projectType: "Leisure & Hospitality",
+    content: "A gorgeous 20,000 Sq. ft. tourist resort layout in Falta, West Bengal. Employs outdoor-grade water-resistant wood decking, custom poolside dining frameworks, and a modern welcoming reception lounge.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/home_hero.png" } },
+      image2: { node: { sourceUrl: "/images/residential_hero.png" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Commercial", slug: "commercial" }
+      ]
+    }
+  },
+  {
+    title: "Teo lounge & Bar Punjabi Bagh",
+    slug: "teo-lounge-bar",
+    featuredImage: "/images/craftsmanship.png",
+    projectType: "Hospitality & Bar",
+    content: "Spanning 25,000 Sq. ft. of luxury hospitality layout in Punjabi Bagh. Features custom brass liquor display shelving, bespoke velvet lounges, backlit quartz accent pillars, and premium ambient sound-dampening structures.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/craftsmanship.png" } },
+      image2: { node: { sourceUrl: "/images/turnkey_service.png" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Commercial", slug: "commercial" }
+      ]
+    }
+  },
+  {
+    title: "Completed Office Interiors",
+    slug: "completed-office-interiors",
+    featuredImage: "/images/about_banner.png",
+    projectType: "Corporate Workspaces",
+    content: "A selection of modern office fit-outs completed with ergonomic desking, custom-made linear lighting profiles, private acoustic focus chambers, and factory-finished executive storage cabinets.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/about_banner.png" } },
+      image2: { node: { sourceUrl: "/images/commercial_hero.png" } },
     },
     serviceTypes: {
       nodes: [
@@ -137,25 +230,6 @@ const PROJECTS: Project[] = [
         { name: "Turnover", slug: "turnover" }
       ]
     }
-  }
-];
-
-const POSTS: BlogPost[] = [
-  {
-    title: "The Future of Sustainable Design",
-    slug: "future-sustainable-design",
-    date: "May 10, 2026",
-    featuredImage: "https://images.unsplash.com/photo-1518005020473-eb89d38f2923?auto=format&fit=crop&q=80&w=1200",
-    category: "Sustainability",
-    content: "Exploring how green architecture, modular pre-fabrication, and local sustainable materials are shaping modern Indian homes.",
-  },
-  {
-    title: "Minimalism in Modern Homes",
-    slug: "minimalism-modern-homes",
-    date: "June 15, 2026",
-    featuredImage: "https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=1200",
-    category: "Trends",
-    content: "Why minimal design, warm beige palettes, and factory-level precision detailing remain the hallmark of luxury spaces.",
   }
 ];
 
@@ -223,14 +297,6 @@ export async function getServices(): Promise<Service[]> {
 
 export async function getServiceBySlug(slug: string): Promise<Service | null> {
   return SERVICES.find(s => s.slug === slug) || SERVICES[0];
-}
-
-export async function getPosts(): Promise<BlogPost[]> {
-  return POSTS;
-}
-
-export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  return POSTS.find(p => p.slug === slug) || POSTS[0];
 }
 
 export async function getSponsors(): Promise<any[]> {

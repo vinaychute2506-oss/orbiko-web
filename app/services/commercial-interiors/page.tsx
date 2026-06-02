@@ -74,13 +74,18 @@ export default function CommercialInteriorsPage() {
           {/* Left Column: Tab Controls and Tab Detail */}
           <div className="lg:col-span-8 space-y-16">
             <div className="space-y-6">
-              <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block">Overview</span>
+              <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block">Service Overview</span>
               <h2 className="text-3xl md:text-5xl font-heading font-light text-foreground leading-[1.15] tracking-tight">
                 High-Performance Spaces For Growing Brands
               </h2>
-              <p className="text-foreground/75 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20">
-                Orbiko designs and delivers premium commercial spaces including offices, cafés, and retail showrooms. We optimize spatial layouts to align with workflow paths, brand aesthetics, and absolute structural durability.
-              </p>
+              <div className="space-y-4 text-foreground/75 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20">
+                <p>
+                  Elevate your office, showroom, café, retail store, or commercial space with interiors designed to strengthen your brand identity, enhance customer experience, and maximize operational efficiency.
+                </p>
+                <p>
+                  From concept planning and realistic 3D visualizations to in-house manufacturing and precision execution, Orbiko delivers end-to-end commercial interior solutions with factory-finish quality, transparent pricing, and assured timelines.
+                </p>
+              </div>
             </div>
 
             {/* Tab selection grid */}
@@ -142,17 +147,23 @@ export default function CommercialInteriorsPage() {
               </AnimatePresence>
             </div>
 
-            {/* Commercial Project Grid Grid */}
+            {/* Commercial Project Grid */}
             <div className="pt-12 border-t border-border/10 space-y-8">
               <div>
                 <span className="text-primary text-[9px] uppercase tracking-[0.25em] font-bold block">Selected Portfolio</span>
-                <h3 className="text-2xl font-heading font-semibold text-foreground mt-2 tracking-tight">Recent Workspaces</h3>
+                <h3 className="text-2xl font-heading font-semibold text-foreground mt-2 tracking-tight">Commercial Projects</h3>
+                <p className="text-foreground/50 text-xs font-light mt-1">Explore our key commercial interior project rollouts across major cities.</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
-                  { title: "Corporate Oasis Offices", loc: "Whitefield, Bangalore", img: "/images/commercial_hero.png" },
-                  { title: "Bespoke Design Gallery", loc: "Indiranagar, Bangalore", img: "/images/about_partner.png" }
+                  { title: "Vihaan Heart and Super specialty Hospital", spec: "Healthcare | Area: 42,000 Sq. ft.", img: "/images/commercial_hero.png", slug: "vihaan-heart-hospital" },
+                  { title: "Indiabulls, Delhi", spec: "Corporate Office | 25,000+ sft", img: "/images/commercial_service.png", slug: "indiabulls-delhi" },
+                  { title: "SDM Ayurveda College Bangalore", spec: "Institutional | Bangalore", img: "/images/about_partner.png", slug: "sdm-ayurveda-college" },
+                  { title: "Amoeba Game Zone", spec: "Gaming & Entertainment | Area: 20,000+ Sq. ft.", img: "/images/turnkey_hero_after.png", slug: "amoeba-game-zone" },
+                  { title: "Aqua Retreat Falta, WB", spec: "Leisure Resort | Area: 20,000 Sq. ft", img: "/images/home_hero.png", slug: "aqua-retreat-falta" },
+                  { title: "Teo lounge & Bar Punjabi Bagh", spec: "Hospitality & Bar | Area: 25,000 Sq. ft", img: "/images/craftsmanship.png", slug: "teo-lounge-bar" },
+                  { title: "Completed Office Interiors", spec: "Corporate Workspace | Multi-Location", img: "/images/about_banner.png", slug: "completed-office-interiors" }
                 ].map((proj, idx) => (
                   <div key={idx} className="group relative aspect-[4/3] bg-card overflow-hidden border border-border/10 rounded-sm shadow-md">
                     <img
@@ -162,13 +173,13 @@ export default function CommercialInteriorsPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                     <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                      <div>
-                        <span className="text-primary text-[8px] uppercase tracking-wider font-bold">{proj.loc}</span>
-                        <h4 className="text-sm font-bold text-foreground mt-1">{proj.title}</h4>
+                      <div className="max-w-[80%]">
+                        <span className="text-primary text-[8px] uppercase tracking-wider font-bold">{proj.spec}</span>
+                        <h4 className="text-sm font-bold text-foreground mt-1 group-hover:text-primary transition-colors line-clamp-1">{proj.title}</h4>
                       </div>
                       <Link 
-                        href="/portfolio"
-                        className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center text-background border border-foreground/10 group-hover:bg-primary group-hover:border-primary transition-all"
+                        href={`/portfolio/${proj.slug}`}
+                        className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center text-background border border-foreground/10 group-hover:bg-primary group-hover:border-primary transition-all flex-shrink-0"
                         aria-label="View Project"
                       >
                         <Eye size={12} />
@@ -181,24 +192,57 @@ export default function CommercialInteriorsPage() {
 
           </div>
 
-          {/* Right sticky sidebar CTA */}
-          <div className="lg:col-span-4 lg:sticky lg:top-40 h-fit space-y-8">
+          {/* Right sticky sidebar CTA & Value Checklist */}
+          <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit space-y-8">
+            
+            {/* What We Deliver Card */}
             <div className="bg-card border border-border/10 p-10 rounded-sm shadow-xl space-y-8">
-              <div className="flex items-center gap-3">
-                <Briefcase size={18} className="text-primary" />
-                <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-foreground">B2B Standards</span>
+              <div>
+                <span className="text-primary text-[9px] uppercase tracking-[0.2em] font-bold block mb-4">Value Checklist</span>
+                <h3 className="text-xl font-heading font-semibold text-foreground tracking-tight">What We Deliver</h3>
               </div>
-              <h3 className="text-xl font-heading font-medium text-foreground tracking-tight">Request Project Estimate</h3>
-              <p className="text-foreground/60 text-xs leading-relaxed font-light">
+              
+              <ul className="space-y-4 text-xs font-light text-foreground/80 leading-relaxed">
+                {[
+                  "Space Planning & Brand-Focused Design",
+                  "3D Visuals & Design Development",
+                  "Custom Furniture & Modular Solutions",
+                  "End-to-End Project Management",
+                  "Factory-Finish Manufacturing & Installation",
+                  "Premium Materials & Quality Assurance"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="pt-4 border-t border-border/10 text-center">
+                <p className="text-[10px] uppercase tracking-widest font-extrabold text-primary">
+                  10-Year Warranty
+                </p>
+                <p className="text-[9px] uppercase tracking-widest font-bold text-foreground/45 mt-1">
+                  In-House Factory Production
+                </p>
+              </div>
+            </div>
+
+            {/* B2B Consulting Card */}
+            <div className="bg-foreground text-background p-10 rounded-sm shadow-xl space-y-6">
+              <h3 className="text-lg font-heading font-medium text-background tracking-tight">Request Project Estimate</h3>
+              <p className="text-background/60 text-xs leading-relaxed font-light">
                 Orbiko partners with workspace managers, building developers, and designers. We offer completely custom estimations and modular carpentry.
               </p>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="w-full inline-flex items-center justify-between bg-primary text-background border border-primary px-8 py-4.5 text-[9px] uppercase tracking-[0.2em] font-bold hover:bg-transparent hover:text-primary transition-all duration-300 shadow-lg"
+                className="w-full inline-flex items-center justify-between bg-primary text-background border border-primary px-6 py-4.5 text-[9px] uppercase tracking-[0.2em] font-bold hover:bg-transparent hover:text-primary transition-all duration-300"
               >
-                Request Site Consult <ArrowRight size={14} />
+                <span>Request Site Consult</span>
+                <ArrowRight size={14} />
               </button>
             </div>
+            
           </div>
 
         </div>

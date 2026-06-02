@@ -1,20 +1,30 @@
-import { getSiteSettings } from "@/lib/api";
+"use client";
+
 import { Container } from "@/components/ui/Container";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Compass, HelpCircle, HardHat, CalendarRange } from "lucide-react";
+import { ArrowRight, Sparkles, Compass, HelpCircle, HardHat, CalendarRange, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
 
-export const revalidate = 60;
+export default function AboutPage() {
+  const reasonsToChoose = [
+    "45-Day Delivery Assurance for Home Interiors",
+    "Dedicated In-House Manufacturing Facility",
+    "Premium Factory-Finish Modular Solutions",
+    "Experienced Interior Designers & Skilled Artisans",
+    "Realistic 3D Design Previews & Visualizations",
+    "Transparent Pricing with No Hidden Costs",
+    "No Third-Party Contractors",
+    "Projects Delivered Across Bangalore, Kolkata, Pune & Delhi",
+    "4.6/5 Customer Satisfaction Rating",
+    "End-to-End Design, Manufacturing & Installation"
+  ];
 
-export const metadata: Metadata = {
-  title: "About Us | Orbiko — Premium Architecture & Interior Design",
-  description: "Learn about the Orbiko approach, our factory-level precision, and the team behind our premium interior design projects.",
-};
-
-export default async function AboutPage() {
-  const settings = await getSiteSettings().catch(() => null);
-  const yearsExperience = "18";
-  const aboutText = "At Orbiko, we believe interiors should feel seamless, functional, and deeply personal. Every project is thoughtfully designed with modern aesthetics, smart space planning, and factory-finish detailing to create spaces that truly elevate everyday living.";
+  const collaborateChecklist = [
+    "In-House Manufacturing Facility",
+    "Factory-Finish Modular Production",
+    "Custom Furniture & Carpentry Solutions",
+    "Quality-Assured Production & Timely Delivery"
+  ];
 
   return (
     <div className="bg-background min-h-screen pb-24">
@@ -29,10 +39,10 @@ export default async function AboutPage() {
         <div className="absolute inset-0 flex flex-col justify-end pb-20">
           <Container>
             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block mb-6">
-              Precision. Design. Execution.
+              Design Standard
             </span>
             <h1 className="text-5xl md:text-8xl font-heading font-light text-foreground tracking-tight leading-none">
-              Our Studio<span className="text-primary font-black">.</span>
+              About Us<span className="text-primary font-black">.</span>
             </h1>
           </Container>
         </div>
@@ -53,39 +63,53 @@ export default async function AboutPage() {
                   Flawless Execution In Every Corner
                 </h2>
               </div>
-              <div className="space-y-8 text-foreground/70 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20">
+              <div className="space-y-6 text-foreground/75 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20">
                 <p className="font-medium text-foreground text-lg italic">
-                  {aboutText}
+                  At Orbiko, we believe exceptional interiors are more than beautiful spaces. They are thoughtfully crafted environments that blend aesthetics, functionality, and individuality. Every project is designed with modern sensibilities, intelligent space planning, and precision-engineered detailing to create spaces that elevate the way people live and work.
                 </p>
                 <p>
-                  From residential interiors to corporate showrooms and full-scale renovations, our studio coordinates every phase in-house. We guarantee zero contractors, completely transparent estimations, and absolute scheduling control.
+                  For years, Orbiko has successfully delivered interior solutions for leading organizations and premium clients across major cities including Bangalore, Kolkata, Pune, and Delhi. Our commitment to quality, transparency, and execution excellence has earned us a strong client satisfaction rating of 4.6 out of 5.
                 </p>
                 <p>
-                  With state-of-the-art modular manufacturing and strict in-house quality control pipelines, Orbiko delivers high-end custom carpentry, structural detailing, and factory-level support across every single project.
+                  From luxury residences and modular kitchens to corporate offices, showrooms, and complete renovation projects, every stage is managed entirely in-house. We eliminate dependency on third-party contractors, ensuring complete transparency in costing, tighter quality control, and predictable project timelines.
+                </p>
+                <p>
+                  What sets Orbiko apart is our dedicated manufacturing facility, where factory-finished modular furniture, custom carpentry, and precision-crafted interior elements are produced under strict quality standards. Alongside advanced manufacturing capabilities, our team of experienced designers and skilled artisans brings handcrafted detailing and personalized design solutions to every project.
+                </p>
+                <p>
+                  Before execution begins, clients receive highly realistic 3D visualizations and walkthrough concepts, allowing them to experience their future space and make informed decisions with complete confidence.
+                </p>
+                <p>
+                  For residential interior projects, Orbiko proudly offers a 45-Day Delivery Assurance, ensuring timely handover without compromising on craftsmanship, quality, or attention to detail.
+                </p>
+                <p className="font-semibold text-foreground">
+                  With cutting-edge manufacturing, creative design expertise, handcrafted excellence, and end-to-end project management, Orbiko delivers interiors that are sophisticated, durable, and built to exceed expectations.
                 </p>
               </div>
             </div>
 
-            {/* Right Visual Image & Custom Absolute Overlay Panel */}
-            <div className="relative aspect-[4/5] bg-card border border-border/10 overflow-hidden shadow-2xl">
-              <img
-                src="/images/craftsmanship.png"
-                alt="Factory-Finish Detailing"
-                className="absolute inset-0 w-full h-full object-cover grayscale opacity-75"
-              />
-              <div className="absolute top-8 right-8 bg-background border border-border/10 p-8 text-center min-w-[150px] shadow-2xl">
-                <p className="text-3xl font-heading font-bold text-primary leading-none">100%</p>
-                <p className="text-[9px] uppercase tracking-[0.2em] mt-4 font-bold text-foreground/75 leading-relaxed">
-                  In-House Execution<br />Turnkey Support
-                </p>
+            {/* Right Side: Why Choose Orbiko Checklist */}
+            <div className="bg-card border border-border/10 p-10 md:p-12 shadow-2xl space-y-10 rounded-sm lg:sticky lg:top-32">
+              <div>
+                <span className="text-primary text-[10px] uppercase tracking-[0.3em] font-bold block mb-4">Value Proposition</span>
+                <h3 className="text-3xl font-heading font-semibold text-foreground tracking-tight">Why Choose Orbiko?</h3>
               </div>
+              
+              <ul className="space-y-4">
+                {reasonsToChoose.map((reason, idx) => (
+                  <li key={idx} className="flex items-start gap-4">
+                    <CheckCircle size={16} className="text-primary mt-1 flex-shrink-0" />
+                    <span className="text-foreground/80 text-sm font-light leading-relaxed">{reason}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
           </div>
         </Container>
       </section>
 
-      {/* Custom Key Pillars Section (Pillars modeled on the reference layout) */}
+      {/* Custom Key Pillars Section */}
       <section className="py-24 md:py-32 bg-card/45 border-y border-border/10">
         <Container>
           <div className="mb-20 text-center max-w-2xl mx-auto">
@@ -129,9 +153,26 @@ export default async function AboutPage() {
               <h2 className="text-3xl md:text-5xl font-heading font-light text-background tracking-tight leading-[1.1]">
                 Collaborate With Orbiko Planners
               </h2>
-              <p className="text-background/70 text-xs md:text-sm leading-relaxed font-light">
-                Orbiko coordinates closely with architects, developers, and visual planners. We offer custom modular production and precision execution to ensure that design blueprints transition perfectly to physical spaces.
+              <div className="space-y-4 text-background/70 text-xs md:text-sm leading-relaxed font-light">
+                <p className="font-semibold text-background">Get your interior job work done with Orbiko.</p>
+                <p>We partner with interior designers, architects, contractors, and design studios to bring their ideas to life with factory-level precision.</p>
+                <p>Orbiko helps local interior designers manufacture their products through our dedicated in-house production facility, eliminating the need for their own manufacturing setup.</p>
+              </div>
+
+              {/* Checklist */}
+              <ul className="space-y-3 pt-2">
+                {collaborateChecklist.map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3 text-background/95 text-[11px] font-bold uppercase tracking-wider">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-[#E5DED4] font-serif italic text-sm pt-2">
+                "You design it. Orbiko manufactures it."
               </p>
+
               <div className="pt-4">
                 <Link
                   href="/contact"

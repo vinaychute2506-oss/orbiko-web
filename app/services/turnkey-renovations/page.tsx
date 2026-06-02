@@ -62,13 +62,15 @@ export default function TurnkeyRenovationsPage() {
           {/* Left Column: Transformation Comparison & Detail */}
           <div className="lg:col-span-8 space-y-16">
             <div className="space-y-6">
-              <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block">Overview</span>
+              <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block">Service Overview</span>
               <h2 className="text-3xl md:text-5xl font-heading font-light text-foreground leading-[1.15] tracking-tight">
                 Complete Overhauls. Guaranteed Zero Stress.
               </h2>
-              <p className="text-foreground/75 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20">
-                Orbiko coordinates complete turnkey renovations for aging apartments, luxury villas, and retail units. We take entire responsibility for civil structural changes, plumbing re-routing, custom modular fitting, and final architectural finishing.
-              </p>
+              <div className="space-y-4 text-foreground/75 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20">
+                <p>
+                  Transform outdated homes, offices, and commercial spaces into modern, functional environments with Orbiko's complete turnkey renovation solutions. From design planning and 3D visualization to manufacturing, civil work, and final installation, we manage everything under one roof.
+                </p>
+              </div>
             </div>
 
             {/* Before/After Slide Showcase */}
@@ -158,24 +160,57 @@ export default function TurnkeyRenovationsPage() {
 
           </div>
 
-          {/* Right sticky sidebar CTA */}
-          <div className="lg:col-span-4 lg:sticky lg:top-40 h-fit space-y-8">
+          {/* Right sticky sidebar CTA & Checklist */}
+          <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit space-y-8">
+            
+            {/* What We Deliver Card */}
             <div className="bg-card border border-border/10 p-10 rounded-sm shadow-xl space-y-8">
-              <div className="flex items-center gap-3">
-                <ShieldAlert size={18} className="text-primary" />
-                <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-foreground">Turnkey Assurances</span>
+              <div>
+                <span className="text-primary text-[9px] uppercase tracking-[0.2em] font-bold block mb-4">Value Checklist</span>
+                <h3 className="text-xl font-heading font-semibold text-foreground tracking-tight">What We Deliver</h3>
               </div>
-              <h3 className="text-xl font-heading font-medium text-foreground tracking-tight">Coordinate A Site Renovation</h3>
-              <p className="text-foreground/60 text-xs leading-relaxed font-light">
+              
+              <ul className="space-y-4 text-xs font-light text-foreground/80 leading-relaxed">
+                {[
+                  "Renovation Planning & Space Optimization",
+                  "3D Visuals & Design Development",
+                  "Civil, Electrical & Interior Works",
+                  "Custom Furniture & Modular Solutions",
+                  "End-to-End Project Management",
+                  "Premium Finishing & Quality Assurance"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="pt-4 border-t border-border/10 text-center">
+                <p className="text-[10px] uppercase tracking-widest font-extrabold text-primary">
+                  10-Year Warranty
+                </p>
+                <p className="text-[9px] uppercase tracking-widest font-bold text-foreground/45 mt-1">
+                  In-House Factory Production
+                </p>
+              </div>
+            </div>
+
+            {/* B2C/B2B Renovation consulting Card */}
+            <div className="bg-foreground text-background p-10 rounded-sm shadow-xl space-y-6">
+              <h3 className="text-lg font-heading font-medium text-background tracking-tight">Coordinate A Site Renovation</h3>
+              <p className="text-background/60 text-xs leading-relaxed font-light">
                 Our managers assess structural viability, calculate complete plumbing/electrical layouts, and present clear itemized costings.
               </p>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="w-full inline-flex items-center justify-between bg-primary text-background border border-primary px-8 py-4.5 text-[9px] uppercase tracking-[0.2em] font-bold hover:bg-transparent hover:text-primary transition-all duration-300 shadow-lg"
+                className="w-full inline-flex items-center justify-between bg-primary text-background border border-primary px-6 py-4.5 text-[9px] uppercase tracking-[0.2em] font-bold hover:bg-transparent hover:text-primary transition-all duration-300 shadow-lg"
               >
-                Inquire Transformation <ArrowRight size={14} />
+                <span>Inquire Transformation</span>
+                <ArrowRight size={14} />
               </button>
             </div>
+            
           </div>
 
         </div>
