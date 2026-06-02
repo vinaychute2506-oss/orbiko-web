@@ -316,10 +316,9 @@ export default function AdminDashboard() {
   };
 
   const downloadTemplate = () => {
-    const dataStr = "data:text/markdown;charset=utf-8," + encodeURIComponent(CLIENT_TEMPLATE_TEXT);
     const downloadAnchor = document.createElement("a");
-    downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", "CLIENT_CONTENT_TEMPLATE.md");
+    downloadAnchor.setAttribute("href", "/CLIENT_CONTENT_TEMPLATE.docx");
+    downloadAnchor.setAttribute("download", "CLIENT_CONTENT_TEMPLATE.docx");
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
