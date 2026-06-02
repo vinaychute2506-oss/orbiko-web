@@ -5,30 +5,30 @@ const DUMMY_DATA = {
   settings: {
     title: "Orbiko Interiors",
     description: "Premium Interior Solutions",
-    heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-architect-working-on-a-blueprint-4112-large.mp4",
+    heroVideo: "/videos/hero_video.mp4",
   },
   home: {
     title: "Orbiko Interiors",
     tagline: "Smart Design. Precision Execution. Timeless Results.",
-    heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-architect-working-on-a-blueprint-4112-large.mp4",
+    heroVideo: "/videos/hero_video.mp4",
   },
   projects: [
     {
       title: "Modernist Villa",
       slug: "modernist-villa",
-      featuredImage: "/images/about_banner.png",
+      featuredImage: "/images/home_hero.png",
       projectType: "Residential",
       content: "A stunning modernist villa focused on open spaces and natural light.",
       projectFields: {
         projecttype: "Residential",
-        image1: { node: { sourceUrl: "/images/residential_service.png" } },
-        image2: { node: { sourceUrl: "/images/turnkey_service.png" } },
+        image1: { node: { sourceUrl: "/images/residential_hero.png" } },
+        image2: { node: { sourceUrl: "/images/turnkey_hero_after.png" } },
       },
     },
     {
       title: "Corporate Oasis",
       slug: "corporate-oasis",
-      featuredImage: "/images/commercial_service.png",
+      featuredImage: "/images/commercial_hero.png",
       projectType: "Commercial",
       content: "Redefining the workplace with biophilic design elements.",
       projectFields: {
@@ -38,7 +38,7 @@ const DUMMY_DATA = {
     {
       title: "Luxe Penthouse",
       slug: "luxe-penthouse",
-      featuredImage: "/images/residential_service.png",
+      featuredImage: "/images/residential_hero.png",
       projectType: "Interior",
       content: "High-end interior design for a luxury penthouse in the heart of the city.",
       projectFields: {
@@ -51,19 +51,19 @@ const DUMMY_DATA = {
       title: "Residential Interiors",
       slug: "residential-interiors",
       description: "Modern home interiors designed with smart layouts, premium finishes, seamless storage solutions, and factory-level precision detailing.",
-      backgroundImage: "/images/residential_service.png",
+      backgroundImage: "/images/residential_hero.png",
     },
     {
       title: "Commercial Interiors",
       slug: "commercial-interiors",
       description: "Office, café, showroom, and workspace interiors designed to enhance productivity, customer experience, and brand identity.",
-      backgroundImage: "/images/commercial_service.png",
+      backgroundImage: "/images/commercial_hero.png",
     },
     {
       title: "Turnkey Renovation Solutions",
       slug: "turnkey-renovations",
       description: "Upgrade outdated spaces with modern layouts, premium finishes, improved functionality, and seamless end-to-end execution.",
-      backgroundImage: "/images/turnkey_service.png",
+      backgroundImage: "/images/turnkey_hero_after.png",
     }
   ],
   posts: [

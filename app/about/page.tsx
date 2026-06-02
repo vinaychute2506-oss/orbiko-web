@@ -21,8 +21,8 @@ export default async function AboutPage() {
       {/* Visual Header Banner Area */}
       <div className="w-full h-[60vh] relative overflow-hidden bg-background border-b border-border/10">
         <img
-          src="/images/about_banner.png"
-          alt="Orbiko Interiors"
+          src="/images/about_hero.png"
+          alt="Orbiko Interiors Bookshelf Lounge"
           className="absolute inset-0 w-full h-full object-cover grayscale opacity-[0.25]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
@@ -116,30 +116,39 @@ export default async function AboutPage() {
         </Container>
       </section>
 
-      {/* Visual Call To Action Strip */}
+      {/* Visual Call To Action Split Layout with Partner BLUEPRINTS */}
       <section className="py-24 md:py-32">
         <Container>
-          <div className="bg-foreground text-background p-12 md:p-24 text-center relative overflow-hidden rounded-sm border border-border/10 shadow-2xl">
-            <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(229,222,212,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(229,222,212,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-            <div className="relative z-10 max-w-3xl mx-auto space-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center bg-foreground text-background p-8 md:p-16 rounded-sm border border-border/10 shadow-2xl relative overflow-hidden">
+            <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(229,222,212,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(229,222,212,0.01)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+            
+            <div className="relative z-10 space-y-8">
               <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block">
                 Partner & Studio Support
               </span>
-              <h2 className="text-3xl md:text-6xl font-heading font-light text-background tracking-tight leading-[1.05]">
+              <h2 className="text-3xl md:text-5xl font-heading font-light text-background tracking-tight leading-[1.1]">
                 Collaborate With Orbiko Planners
               </h2>
-              <p className="text-background/60 max-w-2xl mx-auto text-xs md:text-sm leading-relaxed font-light">
-                Orbiko coordinates closely with architects, general contractors, developers, and visual planners. We offer custom modular production and precision execution to ensure that design blueprints transition perfectly to physical spaces.
+              <p className="text-background/70 text-xs md:text-sm leading-relaxed font-light">
+                Orbiko coordinates closely with architects, developers, and visual planners. We offer custom modular production and precision execution to ensure that design blueprints transition perfectly to physical spaces.
               </p>
               <div className="pt-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-4 bg-primary text-background border border-primary px-10 py-5 text-[10px] uppercase tracking-[0.25em] font-bold hover:bg-transparent hover:text-primary transition-all duration-350 shadow-xl"
+                  className="inline-flex items-center gap-4 bg-primary text-background border border-primary px-8 py-4.5 text-[10px] uppercase tracking-[0.25em] font-bold hover:bg-transparent hover:text-primary transition-all duration-350 shadow-xl"
                 >
                   <span>Explore Direct Support</span>
                   <ArrowRight size={14} />
                 </Link>
               </div>
+            </div>
+
+            <div className="relative aspect-[4/3] w-full bg-card/10 overflow-hidden border border-background/10 rounded-sm shadow-xl">
+              <img
+                src="/images/about_partner.png"
+                alt="Wood carpentry factory workshop blueprints"
+                className="absolute inset-0 w-full h-full object-cover opacity-85 hover:scale-102 transition-transform duration-700"
+              />
             </div>
           </div>
         </Container>

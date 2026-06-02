@@ -66,14 +66,14 @@ export default function ContactPage() {
             Start a Conversation
           </span>
           <h1 className="text-5xl md:text-8xl font-heading font-light text-foreground tracking-tight leading-none mb-10">
-            Get in Touch<span className="text-primary font-black">.</span>
+            Let's Create Extraordinary Spaces<span className="text-primary font-black">.</span>
           </h1>
           <p className="text-foreground/75 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20 max-w-2xl">
             Have a design vision, site layout plan, or custom carpentry request? Drop us a brief note. Our expert planning studio will respond with initial layouts and estimations.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 max-w-7xl mx-auto mb-24">
           
           {/* Left Column: Coordinates & Information */}
           <div className="lg:col-span-5 space-y-16">
@@ -88,7 +88,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="text-[9px] uppercase tracking-widest text-foreground/45 mb-2 font-bold">Physical Address</h4>
-                    <p className="text-foreground text-sm leading-relaxed font-medium">Stanza Living Austin House,<br />Kondhwa, Pune, MH 411048, India</p>
+                    <p className="text-foreground text-sm leading-relaxed font-medium">Begur Road,<br />Bangalore, India</p>
+                    <p className="text-xs text-primary font-semibold mt-2 break-all">
+                      <a href="https://share.google/qC4149g75jRanDlgX" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                        View on Google Maps
+                      </a>
+                    </p>
                   </div>
                 </div>
 
@@ -99,7 +104,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-[9px] uppercase tracking-widest text-foreground/45 mb-2 font-bold">Mail Support</h4>
                     <p className="text-foreground text-sm font-semibold">
-                      <a href="mailto:hello@orbiko.com" className="hover:text-primary transition-colors">hello@orbiko.com</a>
+                      <a href="mailto:orbikointerior@gmail.com" className="hover:text-primary transition-colors">orbikointerior@gmail.com</a>
                     </p>
                   </div>
                 </div>
@@ -263,6 +268,24 @@ export default function ContactPage() {
           </div>
 
         </div>
+
+        {/* ── Bottom 5-Feature Premium Strip ── */}
+        <div className="pt-16 border-t border-border/10 grid grid-cols-2 md:grid-cols-5 gap-8">
+          {[
+            { num: "01", title: "10-Year Warranty", desc: "Completely backed craftsmanship" },
+            { num: "02", title: "Premium Materials", desc: "Strict quality-graded fit-outs" },
+            { num: "03", title: "In-House Execution", desc: "Zero external contractor delays" },
+            { num: "04", title: "Itemized Costing", desc: "Zero hidden charges" },
+            { num: "05", title: "Dedicated PM Support", desc: "Single-point coordinate control" }
+          ].map((feat) => (
+            <div key={feat.num} className="space-y-2">
+              <span className="text-[10px] font-bold text-primary/30 uppercase tracking-widest">{feat.num}</span>
+              <h4 className="text-foreground font-heading font-semibold text-xs uppercase tracking-wider">{feat.title}</h4>
+              <p className="text-foreground/50 text-[10px] font-light leading-relaxed">{feat.desc}</p>
+            </div>
+          ))}
+        </div>
+
       </Container>
     </div>
   );

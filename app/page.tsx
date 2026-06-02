@@ -100,46 +100,91 @@ export default function Home() {
         <Quote />
       </motion.div>
 
-      {/* ── 3. Studio Philosophy & About Grid (Copied structural section from references) ── */}
+      {/* ── 3. Studio Philosophy & About Grid (Overhauled with Armchair and Living/Bedroom photo grids & Cost card) ── */}
       <motion.section 
         {...reveal}
         className="py-24 md:py-32 bg-background border-t border-border/10"
       >
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
             
-            {/* Legacy Box */}
-            <div className="flex items-start">
-              <div className="border border-border/20 bg-card/45 p-12 text-center w-full shadow-md rounded-sm">
-                <p className="text-6xl md:text-7xl font-heading font-light text-primary leading-none">18+</p>
-                <p className="text-[10px] text-foreground/45 uppercase tracking-[0.25em] mt-8 leading-relaxed font-bold">
-                  Years of Design<br />& Structural Execution
+            {/* Left Narrative, Philosophy & Cost Card */}
+            <div className="lg:col-span-7 space-y-10">
+              <div className="space-y-6">
+                <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block">
+                  Integrating Art into Architecture
+                </span>
+                <h2 className="text-4xl md:text-5xl font-heading font-light leading-[1.1] text-foreground tracking-tight">
+                  Sustainable Building & Fine Craftsmanship<span className="text-primary font-black">.</span>
+                </h2>
+                <p className="text-foreground/75 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20">
+                  At Orbiko, we build luxury spaces defined by architectural simplicity and smart layouts. Every fit-out is designed in-house, prioritizing climate-conscious systems, natural materials, and factory-level precision detailing to last generations.
                 </p>
-                <div className="mt-8 text-foreground/35 text-[9px] uppercase tracking-[0.2em]">Established 2008</div>
+              </div>
+
+              {/* Real-time Transparency / Cost Estimate Card */}
+              <div className="border border-border/20 bg-card/45 p-8 rounded-sm shadow-sm space-y-4">
+                <div className="flex items-center gap-3">
+                  <Calculator size={18} className="text-primary" />
+                  <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-foreground">Orbiko Precision Costing</span>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-2">
+                  <div>
+                    <p className="text-2xl font-bold font-heading text-primary">0%</p>
+                    <p className="text-[9px] uppercase tracking-wider text-foreground/50 mt-1">Hidden Fees</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold font-heading text-foreground">100%</p>
+                    <p className="text-[9px] uppercase tracking-wider text-foreground/50 mt-1">Itemized CAD BOM</p>
+                  </div>
+                  <div className="col-span-2 md:col-span-1">
+                    <p className="text-2xl font-bold font-heading text-foreground">Fixed</p>
+                    <p className="text-[9px] uppercase tracking-wider text-foreground/50 mt-1">Project Price Quote</p>
+                  </div>
+                </div>
+                <p className="text-[10px] text-foreground/50 leading-relaxed font-light pt-2">
+                  Our system evaluates every panel, profile, and hardware unit to provide a completely predictable budget structure before site execution starts.
+                </p>
+              </div>
+
+              <div className="pt-2">
+                <Link href="/about" className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.25em] font-bold text-foreground">
+                  <span className="border-b border-border/30 pb-1 group-hover:border-primary transition-all duration-350">
+                    Discover Our Story
+                  </span>
+                  <ArrowRight size={14} className="text-primary group-hover:translate-x-1.5 transition-transform duration-350" />
+                </Link>
               </div>
             </div>
 
-            {/* Philosophy Header Block */}
-            <div className="space-y-6">
-              <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold block">
-                Integrating Art into Architecture
-              </span>
-              <h2 className="text-3xl md:text-5xl font-heading font-light leading-[1.1] text-foreground tracking-tight">
-                Sustainable Building & Fine Craftsmanship
-              </h2>
-            </div>
+            {/* Right Overlapping Photo Grid (Armchair & Living/Bedroom) */}
+            <div className="lg:col-span-5 relative h-[500px] md:h-[600px] w-full flex items-center justify-center">
+              {/* Backing structural outline */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(42,27,21,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(42,27,21,0.03)_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-40 pointer-events-none" />
 
-            {/* Narrative Details */}
-            <div className="space-y-8 lg:pt-2">
-              <p className="text-foreground/75 text-sm md:text-base leading-relaxed font-light pl-6 border-l border-primary/20">
-                At Orbiko, we build luxury spaces defined by architectural simplicity and smart layouts. Every fit-out is designed in-house, prioritizing climate-conscious systems, natural materials, and factory-level precision detailing to last generations.
-              </p>
-              <Link href="/about" className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.25em] font-bold text-foreground">
-                <span className="border-b border-border/30 pb-1 group-hover:border-primary transition-all duration-350">
-                  Discover Our Story
-                </span>
-                <ArrowRight size={14} className="text-primary group-hover:translate-x-1.5 transition-transform duration-350" />
-              </Link>
+              {/* Main Armchair Image */}
+              <div className="absolute w-[70%] h-[65%] top-[10%] left-0 border border-border/20 overflow-hidden shadow-2xl z-10 bg-card rounded-sm">
+                <img 
+                  src="/images/home_hero.png" 
+                  alt="Premium beige armchair and plant layout" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-103" 
+                />
+              </div>
+
+              {/* Lower Bedroom Suite Overlapping Image */}
+              <div className="absolute w-[55%] h-[40%] bottom-[8%] right-0 border border-border/20 overflow-hidden shadow-2xl z-20 bg-card rounded-sm">
+                <img 
+                  src="/images/residential_hero.png" 
+                  alt="Premium organic linen bedroom suite design" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-103" 
+                />
+              </div>
+
+              {/* Small overlay banner showing execution details */}
+              <div className="absolute top-[8%] right-[5%] bg-background border border-border/10 p-5 shadow-2xl z-30 max-w-[140px] text-center rounded-sm">
+                <p className="text-xs uppercase tracking-wider font-bold text-primary">Precision Fits</p>
+                <p className="text-[9px] text-foreground/50 mt-1 leading-relaxed">Factory-level carpentry control</p>
+              </div>
             </div>
 
           </div>
