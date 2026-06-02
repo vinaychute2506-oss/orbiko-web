@@ -45,7 +45,7 @@ export default function ResidentialInteriorsPage() {
         <img
           src="/images/residential_hero.png"
           alt="Premium organic linen bedroom suite"
-          className="absolute inset-0 w-full h-full object-cover grayscale brightness-[0.4]"
+          className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end pb-24">
@@ -112,7 +112,7 @@ export default function ResidentialInteriorsPage() {
                 <img
                   src={solutions[activeIndex].image}
                   alt={solutions[activeIndex].title}
-                  className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover brightness-75 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/10 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">

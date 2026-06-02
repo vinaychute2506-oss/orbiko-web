@@ -47,7 +47,7 @@ export default function CommercialInteriorsPage() {
         <img
           src="/images/commercial_hero.png"
           alt="Sleek modern minimalist office"
-          className="absolute inset-0 w-full h-full object-cover grayscale brightness-[0.4]"
+          className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end pb-24">
@@ -140,7 +140,7 @@ export default function CommercialInteriorsPage() {
                     <img
                       src={currentCategory.image}
                       alt={currentCategory.name}
-                      className="absolute inset-0 w-full h-full object-cover grayscale opacity-90"
+                      className="absolute inset-0 w-full h-full object-cover opacity-90"
                     />
                   </div>
                 </motion.div>
@@ -169,7 +169,7 @@ export default function CommercialInteriorsPage() {
                     <img
                       src={proj.img}
                       alt={proj.title}
-                      className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-103 transition-all duration-700 opacity-60 group-hover:opacity-75"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-103 transition-all duration-700 opacity-60 group-hover:opacity-75"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                     <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">

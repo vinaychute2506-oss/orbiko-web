@@ -171,7 +171,7 @@ export default function Home() {
                 <img 
                   src="/images/home_hero.png" 
                   alt="Premium beige armchair and plant layout" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-103" 
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-103" 
                 />
               </div>
 
@@ -180,7 +180,7 @@ export default function Home() {
                 <img 
                   src="/images/residential_hero.png" 
                   alt="Premium organic linen bedroom suite design" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-103" 
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-103" 
                 />
               </div>
 

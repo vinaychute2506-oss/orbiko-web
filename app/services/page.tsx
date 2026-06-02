@@ -54,7 +54,7 @@ export default async function ServicesPage() {
                   <img
                     src={service.backgroundImage ?? FALLBACK_IMAGES[i % 3]}
                     alt={service.title}
-                    className="absolute inset-0 w-full h-full object-cover grayscale opacity-70 group-hover:scale-103 group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-750"
+                    className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-103 group-hover:opacity-90 transition-all duration-750"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-transparent to-transparent opacity-95 group-hover:opacity-75 transition-opacity duration-500" />
                   

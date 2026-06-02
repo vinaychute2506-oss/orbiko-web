@@ -61,7 +61,7 @@ export function RecentProjectsSection({ projects }: RecentProjectsSectionProps) 
                       alt={project.title}
                       whileHover={{ scale: 1.03 }}
                       transition={{ duration: 0.9 }}
-                      className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-700"
+                      className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-all duration-700"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-secondary opacity-30" />

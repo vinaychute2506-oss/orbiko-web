@@ -71,7 +71,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                       alt={service.title}
                       whileHover={{ scale: 1.04 }}
                       transition={{ duration: 0.8 }}
-                      className="absolute inset-0 w-full h-full object-cover opacity-60 transition-opacity duration-700 group-hover:opacity-75 grayscale group-hover:grayscale-0"
+                      className="absolute inset-0 w-full h-full object-cover opacity-60 transition-opacity duration-700 group-hover:opacity-75"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-secondary opacity-30" />

@@ -35,7 +35,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <img
             src={service.backgroundImage}
             alt={service.title}
-            className="absolute inset-0 w-full h-full object-cover grayscale brightness-50"
+            className="absolute inset-0 w-full h-full object-cover brightness-50"
           />
         ) : (
           <div className="absolute inset-0 bg-secondary" />

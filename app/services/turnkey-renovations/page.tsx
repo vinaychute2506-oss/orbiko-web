@@ -35,7 +35,7 @@ export default function TurnkeyRenovationsPage() {
         <img
           src="/images/turnkey_hero_after.png"
           alt="Luxury wood and beige living room"
-          className="absolute inset-0 w-full h-full object-cover grayscale brightness-[0.4]"
+          className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end pb-24">
@@ -97,7 +97,7 @@ export default function TurnkeyRenovationsPage() {
                   <img
                     src="/images/turnkey_hero_before.png"
                     alt="Outdated broken masonry room before renovation"
-                    className="absolute inset-0 w-full h-full object-cover grayscale brightness-90"
+                    className="absolute inset-0 w-full h-full object-cover brightness-90"
                     draggable={false}
                   />
                   <div className="absolute top-6 left-6 bg-black/60 px-3.5 py-1.5 text-[9px] uppercase tracking-widest text-white font-bold backdrop-blur-sm rounded-sm">

@@ -33,7 +33,7 @@ export default function AboutPage() {
         <img
           src="/images/about_hero.png"
           alt="Orbiko Interiors Bookshelf Lounge"
-          className="absolute inset-0 w-full h-full object-cover grayscale opacity-[0.25]"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.25]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end pb-20">
