@@ -10,17 +10,29 @@ import { SiteSettings } from "@/lib/api";
 const HERO_SLIDES = [
   { 
     tagline: "FLAWLESS LIVING STARTS AT HOME", 
-    headline: "PREMIUM INTERIORS\n& LUXURY FIT-OUTS.", 
+    headline: (
+      <>
+        Interiors that<br />reflect <span className="font-serif italic font-light text-primary">you.</span>
+      </>
+    ), 
     description: "Designing seamless spaces with factory-level precision, customized layouts, and end-to-end turnkey support." 
   },
   { 
     tagline: "PRECISION EXECUTION & CRAFTSMANSHIP", 
-    headline: "IN-HOUSE FACTORY\nFINISH DETAILING.", 
+    headline: (
+      <>
+        In-House Factory<br />Finish <span className="font-serif italic font-light text-primary">Detailing.</span>
+      </>
+    ), 
     description: "Providing high-end modular production, structural engineering, and direct supervisor support for modern homes." 
   },
   { 
     tagline: "INTEGRATING ART INTO ARCHITECTURE", 
-    headline: "MINIMAL DESIGN.\nTIMELESS LIVING.", 
+    headline: (
+      <>
+        Minimal Design.<br />Timeless <span className="font-serif italic font-light text-primary">Living.</span>
+      </>
+    ), 
     description: "Creating functional, elegant residential and commercial spaces that adapt perfectly to your modern lifestyle." 
   },
 ];

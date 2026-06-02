@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: project?.title ?? "Project | Orbiko",
       description: project?.content?.replace(/<[^>]+>/g, "").slice(0, 155) ?? "",
-      images: project?.featuredImage?.node?.sourceUrl ? [{ url: project.featuredImage.node.sourceUrl }] : [],
+      images: project?.featuredImage ? [{ url: project.featuredImage }] : [],
       type: "website",
     },
   };
@@ -48,11 +48,11 @@ export default async function PortfolioDetailPage({ params }: Props) {
     project.projectFields?.image4?.node?.sourceUrl,
     project.projectFields?.image5?.node?.sourceUrl
   ].filter(Boolean).map(url => ({
-    image: { node: { sourceUrl: url } },
+    image: { node: { sourceUrl: url as string } },
     title: project.title
   }));
 
-  const imageSrc = project.featuredImage?.node?.sourceUrl ?? null;
+  const imageSrc = project.featuredImage ?? null;
   const projectType = project.projectFields?.projecttype || "Architecture";
 
   return (

@@ -128,18 +128,22 @@ export default function Home() {
                   <Calculator size={18} className="text-primary" />
                   <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-foreground">Orbiko Precision Costing</span>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-2">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-2">
                   <div>
                     <p className="text-2xl font-bold font-heading text-primary">0%</p>
                     <p className="text-[9px] uppercase tracking-wider text-foreground/50 mt-1">Hidden Fees</p>
                   </div>
                   <div>
                     <p className="text-2xl font-bold font-heading text-foreground">100%</p>
-                    <p className="text-[9px] uppercase tracking-wider text-foreground/50 mt-1">Itemized CAD BOM</p>
+                    <p className="text-[9px] uppercase tracking-wider text-foreground/50 mt-1">Itemized BOM</p>
                   </div>
-                  <div className="col-span-2 md:col-span-1">
+                  <div>
                     <p className="text-2xl font-bold font-heading text-foreground">Fixed</p>
-                    <p className="text-[9px] uppercase tracking-wider text-foreground/50 mt-1">Project Price Quote</p>
+                    <p className="text-[9px] uppercase tracking-wider text-foreground/50 mt-1">Price Quote</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold font-heading text-primary">₹1,20,000</p>
+                    <p className="text-[9px] uppercase tracking-wider text-foreground/50 mt-1">Kitchen Start Price</p>
                   </div>
                 </div>
                 <p className="text-[10px] text-foreground/50 leading-relaxed font-light pt-2">

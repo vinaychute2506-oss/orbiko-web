@@ -23,38 +23,40 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setStatus("idle");
 
-    try {
-      // Mocking submission for live demo fallback if backend isn't ready
-      const res = await fetch("http://orbiko-clean.local/wp-json/orbiko/v1/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, service, message }),
-      }).catch(() => null);
+    const newSubmission = {
+      id: Date.now().toString(),
+      name,
+      email,
+      phone,
+      service,
+      message,
+      date: new Date().toLocaleString(),
+    };
 
-      if (res && res.ok) {
-        setStatus("success");
-        setName("");
-        setEmail("");
-        setPhone("");
-        setMessage("");
-        setService("Architectural Design");
-      } else {
-        // Fallback success for beautiful client demo experience
-        setTimeout(() => {
-          setStatus("success");
-          setName("");
-          setEmail("");
-          setPhone("");
-          setMessage("");
-          setService("Architectural Design");
-        }, 1200);
-      }
-    } catch {
-      setStatus("error");
-      setErrorMsg("Failed to send message. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
+    try {
+      const existing = JSON.parse(localStorage.getItem("orbiko_submissions") || "[]");
+      localStorage.setItem("orbiko_submissions", JSON.stringify([newSubmission, ...existing]));
+    } catch (err) {
+      console.error("Local storage error:", err);
     }
+
+    // Fallback success for beautiful client demo experience
+    setTimeout(() => {
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+      setService("Architectural Design");
+      setIsSubmitting(false);
+    }, 1000);
+  };
+
+  const handleWhatsAppInquiry = () => {
+    const text = encodeURIComponent(
+      `Hi Orbiko! I'd like to inquire about a project.\n\nName: ${name || "Guest"}\nEmail: ${email || "Not provided"}\nPhone: ${phone || "Not provided"}\nService: ${service}\nMessage: ${message || "No message provided"}`
+    );
+    window.open(`https://wa.me/919876543210?text=${text}`, "_blank");
   };
 
   return (
@@ -253,14 +255,24 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-primary text-background border border-primary py-4.5 text-[9px] uppercase tracking-[0.25em] font-bold hover:bg-transparent hover:text-primary transition-all duration-350 disabled:opacity-50 disabled:cursor-not-allowed group flex items-center justify-center gap-3 shadow-md"
-                    >
-                      {isSubmitting ? "TRANSMITTING..." : "Send Message Inquiry"}
-                      {!isSubmitting && <span className="group-hover:translate-x-1 transition-transform">→</span>}
-                    </button>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full bg-primary text-background border border-primary py-4.5 text-[9px] uppercase tracking-[0.25em] font-bold hover:bg-transparent hover:text-primary transition-all duration-350 disabled:opacity-50 disabled:cursor-not-allowed group flex items-center justify-center gap-3 shadow-md"
+                      >
+                        {isSubmitting ? "TRANSMITTING..." : "Send Message Inquiry"}
+                        {!isSubmitting && <span className="group-hover:translate-x-1 transition-transform">→</span>}
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={handleWhatsAppInquiry}
+                        className="w-full bg-green-600 hover:bg-green-700 text-white py-4.5 text-[9px] uppercase tracking-[0.25em] font-bold flex items-center justify-center gap-3 transition-colors shadow-md"
+                      >
+                        Inquire on WhatsApp
+                      </button>
+                    </div>
                   </motion.form>
                 )}
               </AnimatePresence>

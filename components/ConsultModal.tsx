@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Phone, User, ArrowRight, CheckCircle } from "lucide-react";
+import { X, Phone, User, ArrowRight, CheckCircle, MessageSquare } from "lucide-react";
 import { useState } from "react";
 
 interface ConsultModalProps {
@@ -18,8 +18,23 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
     e.preventDefault();
     setStatus("submitting");
     
+    // Save to local storage for local hardcoded submissions
+    const newSubmission = {
+      id: Date.now().toString(),
+      name,
+      phone,
+      date: new Date().toLocaleString(),
+    };
+    
+    try {
+      const existing = JSON.parse(localStorage.getItem("orbiko_callbacks") || "[]");
+      localStorage.setItem("orbiko_callbacks", JSON.stringify([newSubmission, ...existing]));
+    } catch (err) {
+      console.error("Local storage error:", err);
+    }
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise(resolve => setTimeout(resolve, 1000));
     setStatus("success");
     
     // Reset after success
@@ -28,7 +43,14 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
       setStatus("idle");
       setName("");
       setPhone("");
-    }, 3000);
+    }, 4000);
+  };
+
+  const handleWhatsAppDirect = () => {
+    const text = encodeURIComponent(
+      `Hi Orbiko! My name is ${name || "Guest"}. I would like to book a free consultation.\n\nPhone: ${phone || "Not provided"}`
+    );
+    window.open(`https://wa.me/919876543210?text=${text}`, "_blank");
   };
 
   return (
@@ -54,19 +76,31 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
             <button
               onClick={onClose}
               className="absolute top-6 right-6 text-foreground/40 hover:text-primary transition-colors"
+              aria-label="Close Modal"
             >
               <X size={20} />
             </button>
 
             {status === "success" ? (
-              <div className="py-8 text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8 text-primary">
+              <div className="py-8 text-center space-y-6">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto text-primary animate-bounce">
                   <CheckCircle size={32} />
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-foreground mb-4">Request Received!</h3>
-                <p className="text-foreground/40 text-sm font-light leading-relaxed">
-                  Thank you, {name}. Our design expert will call you back on {phone} within 2 hours.
-                </p>
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-heading font-bold text-foreground">Request Received!</h3>
+                  <p className="text-foreground/60 text-xs font-light leading-relaxed">
+                    Thank you, {name || "Guest"}. We have saved your callback request. Our designer will call you at {phone} within 2 hours.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-border/10">
+                  <button
+                    onClick={handleWhatsAppDirect}
+                    className="w-full bg-green-600 hover:bg-green-700 text-white py-4 text-[10px] uppercase tracking-[0.25em] font-bold rounded-sm flex items-center justify-center gap-3 transition-colors shadow-md"
+                  >
+                    <MessageSquare size={14} />
+                    <span>Inquire via WhatsApp</span>
+                  </button>
+                </div>
               </div>
             ) : (
               <div className="space-y-8">
@@ -108,14 +142,25 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
                     </div>
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={status === "submitting"}
-                    className="w-full bg-foreground text-background py-5 text-[10px] uppercase tracking-[0.25em] font-bold hover:bg-primary transition-all duration-500 flex items-center justify-center gap-3 shadow-xl"
-                  >
-                    {status === "submitting" ? "Processing..." : "Get Call Back"}
-                    {status === "idle" && <ArrowRight size={14} />}
-                  </button>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <button
+                      type="submit"
+                      disabled={status === "submitting"}
+                      className="w-full bg-foreground text-background py-4.5 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary hover:text-background transition-all duration-300 flex items-center justify-center gap-2 shadow-md"
+                    >
+                      {status === "submitting" ? "Processing..." : "Get Call Back"}
+                      {status === "idle" && <ArrowRight size={12} />}
+                    </button>
+                    
+                    <button
+                      type="button"
+                      onClick={handleWhatsAppDirect}
+                      className="w-full bg-green-600 hover:bg-green-700 text-white py-4.5 text-[10px] uppercase tracking-[0.2em] font-bold flex items-center justify-center gap-2 transition-colors shadow-md"
+                    >
+                      <MessageSquare size={12} />
+                      <span>WhatsApp Chat</span>
+                    </button>
+                  </div>
                 </form>
 
                 <p className="text-[9px] text-center text-foreground/30 uppercase tracking-[0.2em]">

@@ -27,7 +27,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   if (!post) notFound();
 
-  const category = post.categories?.nodes?.[0]?.name || "Article";
+  const category = post.category || "Article";
 
   return (
     <article className="bg-background min-h-screen pb-32 pt-32 md:pt-40">
