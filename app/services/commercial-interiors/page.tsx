@@ -157,12 +157,12 @@ export default function CommercialInteriorsPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
-                  { title: "Vihaan Heart and Super specialty Hospital", spec: "Healthcare | Area: 42,000 Sq. ft.", img: "/images/commercial_hero.png", slug: "vihaan-heart-hospital" },
-                  { title: "Indiabulls, Delhi", spec: "Corporate Office | 25,000+ sft", img: "/images/commercial_service.png", slug: "indiabulls-delhi" },
-                  { title: "SDM Ayurveda College Bangalore", spec: "Institutional | Bangalore", img: "/images/about_partner.png", slug: "sdm-ayurveda-college" },
-                  { title: "Amoeba Game Zone", spec: "Gaming & Entertainment | Area: 20,000+ Sq. ft.", img: "/images/turnkey_hero_after.png", slug: "amoeba-game-zone" },
-                  { title: "Aqua Retreat Falta, WB", spec: "Leisure Resort | Area: 20,000 Sq. ft", img: "/images/home_hero.png", slug: "aqua-retreat-falta" },
-                  { title: "Teo lounge & Bar Punjabi Bagh", spec: "Hospitality & Bar | Area: 25,000 Sq. ft", img: "/images/craftsmanship.png", slug: "teo-lounge-bar" },
+                  { title: "Vihaan Heart & Super Specialty Hospital", spec: "Healthcare | Area: 42,000 Sq. ft.", img: "/images/vihaan-hospital-featured.jpg", slug: "vihaan-heart-super-specialty-hospital" },
+                  { title: "Indiabulls Corporate Office", spec: "Corporate Office | Area: 25,000+ Sq. ft.", img: "/images/indiabulls-office-featured.jpg", slug: "indiabulls-corporate-office-delhi" },
+                  { title: "SDM Ayurveda College & Hospital", spec: "Institutional | Area: 65,000+ Sq. ft.", img: "/images/sdm-ayurveda-featured.jpg", slug: "sdm-ayurveda-college-bangalore" },
+                  { title: "Amoeba Game Zone – Multi-City Entertainment Centers", spec: "Gaming & Entertainment | Area: 20,000+ Sq. ft.", img: "/images/amoeba-game-zone-featured.jpg", slug: "amoeba-game-zone-multi-city" },
+                  { title: "Aqua Retreat Resort & Wellness Destination", spec: "Hospitality & Resort | Area: 20,000 Sq. ft.", img: "/images/aqua-retreat-featured.jpg", slug: "aqua-retreat-falta-west-bengal" },
+                  { title: "Teo Lounge & Bar", spec: "Hospitality & Lounge | Area: 25,000 Sq. ft.", img: "/images/teo-lounge-featured.jpg", slug: "teo-lounge-bar-punjabi-bagh" },
                   { title: "Completed Office Interiors", spec: "Corporate Workspace | Multi-Location", img: "/images/about_banner.png", slug: "completed-office-interiors" }
                 ].map((proj, idx) => (
                   <div key={idx} className="group relative aspect-[4/3] bg-card overflow-hidden border border-border/10 rounded-sm shadow-md">
