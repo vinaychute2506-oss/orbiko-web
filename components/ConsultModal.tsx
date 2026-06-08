@@ -50,7 +50,7 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
     const text = encodeURIComponent(
       `Hi Orbiko! My name is ${name || "Guest"}. I would like to book a free consultation.\n\nPhone: ${phone || "Not provided"}`
     );
-    window.open(`https://wa.me/919876543210?text=${text}`, "_blank");
+    window.open(`https://wa.me/917259883558?text=${text}`, "_blank");
   };
 
   return (
@@ -136,7 +136,7 @@ export function ConsultModal({ isOpen, onClose }: ConsultModalProps) {
                         type="tel"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 72598 83558"
                         className="w-full bg-background border border-border/5 px-12 py-4 text-foreground text-sm focus:border-primary focus:outline-none transition-all placeholder:text-foreground/10"
                       />
                     </div>

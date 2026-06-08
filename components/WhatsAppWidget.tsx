@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 export function WhatsAppWidget() {
-  const whatsappNumber = "919876543210";
+  const whatsappNumber = "917259883558";
   const defaultText = encodeURIComponent("Hello Orbiko! I'm visiting your website and would like to inquire about your premium interior design services.");
   const url = `https://wa.me/${whatsappNumber}?text=${defaultText}`;
 

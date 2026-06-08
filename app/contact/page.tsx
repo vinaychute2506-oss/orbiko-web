@@ -56,7 +56,7 @@ export default function ContactPage() {
     const text = encodeURIComponent(
       `Hi Orbiko! I'd like to inquire about a project.\n\nName: ${name || "Guest"}\nEmail: ${email || "Not provided"}\nPhone: ${phone || "Not provided"}\nService: ${service}\nMessage: ${message || "No message provided"}`
     );
-    window.open(`https://wa.me/919876543210?text=${text}`, "_blank");
+    window.open(`https://wa.me/917259883558?text=${text}`, "_blank");
   };
 
   return (
@@ -118,7 +118,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-[9px] uppercase tracking-widest text-foreground/45 mb-2 font-bold">Hotline Inquiry</h4>
                     <p className="text-foreground text-lg font-heading font-bold">
-                      <a href="tel:+919876543210" className="hover:text-primary transition-colors">+91 98765 43210</a>
+                      <a href="tel:+917259883558" className="hover:text-primary transition-colors">+91 72598 83558</a>
                     </p>
                     <p className="text-[9px] text-foreground/40 uppercase tracking-widest mt-1 font-bold">Available 10 AM — 7 PM</p>
                   </div>
@@ -223,7 +223,7 @@ export default function ContactPage() {
                           type="tel" 
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          placeholder="+91 98765 43210"
+                          placeholder="+91 72598 83558"
                           className="w-full bg-background border border-border/15 px-5 py-3 text-sm text-foreground focus:border-primary focus:outline-none transition-all duration-350 placeholder:text-foreground/20 font-bold tracking-wider" 
                         />
                       </div>
