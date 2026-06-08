@@ -13,6 +13,7 @@ export interface Project {
     image3?: { node: { sourceUrl: string } };
     image4?: { node: { sourceUrl: string } };
     image5?: { node: { sourceUrl: string } };
+    image6?: { node: { sourceUrl: string } };
   };
   serviceTypes?: {
     nodes: {
@@ -116,7 +117,7 @@ const PROJECTS: Project[] = [
   },
   {
     title: "Indiabulls Corporate Office",
-    slug: "indiabulls-corporate-office-delhi",
+    slug: "indiabulls-corporate-office",
     featuredImage: "/images/indiabulls-office-featured.jpg",
     projectType: "Corporate Office",
     content: "The Indiabulls Corporate Office project was designed to reflect the company's strong market presence, professional culture, and future-focused business vision. Spanning over 25,000 square feet, the workspace was planned to balance executive sophistication, employee productivity, and collaborative work environments.<br/><br/>The design incorporates premium materials, modern workspace planning, ergonomic solutions, and technology-enabled meeting areas. Open workstations, executive cabins, conference rooms, breakout zones, and client-facing spaces were strategically designed to create an efficient, inspiring, and high-performance workplace.<br/><br/>Special attention was given to brand integration, acoustic comfort, lighting design, and flexible workspace solutions to support evolving business needs while maintaining a premium corporate identity.",
@@ -134,11 +135,11 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    title: "SDM Ayurveda College & Hospital",
+    title: "SDM Ayurveda College Bangalore",
     slug: "sdm-ayurveda-college-bangalore",
     featuredImage: "/images/sdm-ayurveda-featured.jpg",
-    projectType: "Educational & Healthcare Institution",
-    content: "SDM Ayurveda College & Hospital was envisioned as a modern educational and healthcare campus that seamlessly blends traditional Ayurvedic values with contemporary architecture and infrastructure. The project focused on creating an environment that supports learning, healing, research, and community engagement.<br/><br/>The design approach emphasized spacious academic blocks, advanced clinical facilities, administrative spaces, student-centric environments, and patient-friendly treatment areas. Natural materials, sustainable design strategies, and efficient space planning were incorporated throughout the campus to reflect the holistic principles of Ayurveda.<br/><br/>The result is a functional, future-ready institution that enhances educational excellence while providing a calm and welcoming healthcare experience for patients and visitors.",
+    projectType: "Ayurvedic hospitals",
+    content: "SDM Ayurveda College Bangalore was envisioned as a modern educational and healthcare campus that seamlessly blends traditional Ayurvedic values with contemporary architecture and infrastructure. The project focused on creating an environment that supports learning, healing, research, and community engagement.<br/><br/>The design approach emphasized spacious academic blocks, advanced clinical facilities, administrative spaces, student-centric environments, and patient-friendly treatment areas. Natural materials, sustainable design strategies, and efficient space planning were incorporated throughout the campus to reflect the holistic principles of Ayurveda.<br/><br/>The result is a functional, future-ready institution that enhances educational excellence while providing a calm and welcoming healthcare experience for patients and visitors.",
     projectFields: {
       projecttype: "Commercial",
       image1: { node: { sourceUrl: "/images/sdm-ayurveda-featured.jpg" } },
@@ -153,11 +154,11 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    title: "Amoeba Game Zone – Multi-City Entertainment Centers",
+    title: "Amoeba Game Zone Pune, Gurgaon, Noida & Kolkata",
     slug: "amoeba-game-zone-multi-city",
     featuredImage: "/images/amoeba-game-zone-featured.jpg",
-    projectType: "Entertainment & Family Recreation Center",
-    content: "Amoeba Game Zone is a vibrant family entertainment destination designed to deliver immersive gaming experiences across multiple cities. This multi-location project focused on creating visually dynamic, high-energy environments that appeal to visitors of all age groups while maximizing operational efficiency and customer engagement.<br/><br/>Spanning over 20,000 square feet, the project incorporates arcade gaming zones, bowling alleys, redemption counters, VR experiences, interactive attractions, food courts, party spaces, and family activity areas. The design language combines bold colors, futuristic lighting, themed graphics, and experiential elements to create an exciting atmosphere that encourages longer visitor engagement.<br/><br/>Each location was carefully adapted to its site conditions while maintaining a consistent Amoeba brand identity across Pune, Gurugram, Noida, and Kolkata.",
+    projectType: "Corporate Office",
+    content: "Amoeba Game Zone is a vibrant family entertainment destination designed to deliver immersive gaming experiences across Pune, Gurugram, Noida, and Kolkata. This multi-location project focused on creating visually dynamic, high-energy environments that appeal to visitors of all age groups while maximizing operational efficiency and customer engagement.<br/><br/>Spanning over 20,000 square feet, the project incorporates arcade gaming zones, bowling alleys, redemption counters, VR experiences, interactive attractions, food courts, party spaces, and family activity areas. The design language combines bold colors, futuristic lighting, themed graphics, and experiential elements to create an exciting atmosphere that encourages longer visitor engagement.",
     projectFields: {
       projecttype: "Commercial",
       image1: { node: { sourceUrl: "/images/amoeba-game-zone-featured.jpg" } },
@@ -172,17 +173,57 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    title: "Aqua Retreat Resort & Wellness Destination",
+    title: "Aqua Retreat Falta, WB",
     slug: "aqua-retreat-falta-west-bengal",
     featuredImage: "/images/aqua-retreat-featured.jpg",
-    projectType: "Hospitality & Resort Development",
-    content: "Aqua Retreat is a premium hospitality destination designed to offer guests a serene escape from urban life while embracing the natural beauty of Falta, West Bengal. Spread across 20,000 square feet, the project combines contemporary resort aesthetics with nature-inspired design elements to create an immersive relaxation experience.<br/><br/>The development features luxurious guest accommodations, landscaped outdoor spaces, wellness zones, recreational amenities, dining facilities, and waterfront-inspired experiences. The design philosophy focused on blending architecture with the surrounding environment while delivering comfort, elegance, and memorable guest experiences.<br/><br/>Carefully curated materials, open spaces, natural lighting, and seamless indoor-outdoor connections create an atmosphere of tranquility, making Aqua Retreat a destination for leisure, wellness, and rejuvenation.",
+    projectType: "Residential",
+    content: "Aqua Retreat is a premium hospitality destination designed to offer guests a serene escape from urban life while embracing the natural beauty of Falta, West Bengal. Spread across 20,000 square feet, the project combines contemporary resort aesthetics with nature-inspired design elements to create an immersive relaxation experience.<br/><br/>The development features luxurious guest accommodations, landscaped outdoor spaces, wellness zones, recreational amenities, dining facilities, and waterfront-inspired experiences. The design philosophy focused on blending architecture with the surrounding environment while delivering comfort, elegance, and memorable guest experiences.",
     projectFields: {
-      projecttype: "Commercial",
+      projecttype: "Residential",
       image1: { node: { sourceUrl: "/images/aqua-retreat-featured.jpg" } },
       image2: { node: { sourceUrl: "/images/aqua-retreat-resort-view.jpg" } },
       image3: { node: { sourceUrl: "/images/aqua-retreat-wellness-zone.jpg" } },
       image4: { node: { sourceUrl: "/images/aqua-retreat-before.jpg" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Residential", slug: "residential" }
+      ]
+    }
+  },
+  {
+    title: "Teo Lounge & Bar",
+    slug: "teo-lounge-bar-punjabi-bagh",
+    featuredImage: "/images/teo-lounge-featured.jpg",
+    projectType: "Residential",
+    content: "Teo Lounge & Bar was conceptualized as a premium nightlife and hospitality destination that combines sophisticated interiors, immersive ambiance, and modern luxury. Spread across 25,000 square feet in the heart of Punjabi Bagh, the venue was designed to deliver a memorable experience through its distinctive atmosphere, curated lighting, and high-end finishes.<br/><br/>The project features multiple seating experiences, a signature bar, VIP lounges, private dining areas, live entertainment zones, and dynamic social spaces. Every aspect of the project was carefully crafted to maximize guest comfort, operational efficiency, and visual impact while reinforcing the brand's premium identity.",
+    projectFields: {
+      projecttype: "Residential",
+      image1: { node: { sourceUrl: "/images/teo-lounge-featured.jpg" } },
+      image2: { node: { sourceUrl: "/images/teo-main-bar.jpg" } },
+      image3: { node: { sourceUrl: "/images/teo-vip-lounge.jpg" } },
+      image4: { node: { sourceUrl: "/images/teo-lounge-image4.jpg" } },
+      image5: { node: { sourceUrl: "/images/teo-lounge-image5.jpg" } },
+      image6: { node: { sourceUrl: "/images/teo-lounge-image6.jpg" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Residential", slug: "residential" }
+      ]
+    }
+  },
+  {
+    title: "Intugine Bangalore",
+    slug: "intugine-bangalore",
+    featuredImage: "/images/intugine-featured.jpg",
+    projectType: "Corporate Office",
+    content: "Intugine Bangalore is a modern, high-tech corporate workspace designed to foster innovation, collaboration, and employee productivity. Spanning over 1,500 square feet, the interior layout features a sleek contemporary aesthetic with ergonomic desking, custom linear lighting, and integrated private breakout areas.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/intugine-featured.jpg" } },
+      image2: { node: { sourceUrl: "/images/intugine-workspace.jpg" } },
+      image3: { node: { sourceUrl: "/images/intugine-lobby.jpg" } },
+      image4: { node: { sourceUrl: "/images/intugine-before.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -191,17 +232,57 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    title: "Teo Lounge & Bar",
-    slug: "teo-lounge-bar-punjabi-bagh",
-    featuredImage: "/images/teo-lounge-featured.jpg",
-    projectType: "Hospitality | Lounge, Bar & Fine Dining Venue",
-    content: "Teo Lounge & Bar was conceptualized as a premium nightlife and hospitality destination that combines sophisticated interiors, immersive ambiance, and modern luxury. Spread across 25,000 square feet in the heart of Punjabi Bagh, the venue was designed to deliver a memorable experience through its distinctive atmosphere, curated lighting, and high-end finishes.<br/><br/>The project features multiple seating experiences, a signature bar, VIP lounges, private dining areas, live entertainment zones, and dynamic social spaces. The design language blends contemporary elegance with bold statement elements, creating an environment that seamlessly transitions from an upscale dining destination during the day to a vibrant nightlife venue after sunset.<br/><br/>Every aspect of the project was carefully crafted to maximize guest comfort, operational efficiency, and visual impact while reinforcing the brand's premium identity.",
+    title: "Orkus Regenta Lounge & Bar Hotel Pune",
+    slug: "orkus-regenta-lounge-bar-pune",
+    featuredImage: "/images/orkus-regenta-featured.jpg",
+    projectType: "Hospitality",
+    content: "The Orkus Regenta Lounge & Bar in Hotel Pune is a premium hospitality project designed to deliver a high-end social and dining experience. Covering 25,000 square feet, the layout balances cozy private seating sections with a dramatic main bar counter, custom architectural screen details, and bespoke lighting fixtures.",
     projectFields: {
       projecttype: "Commercial",
-      image1: { node: { sourceUrl: "/images/teo-lounge-featured.jpg" } },
-      image2: { node: { sourceUrl: "/images/teo-main-bar.jpg" } },
-      image3: { node: { sourceUrl: "/images/teo-vip-lounge.jpg" } },
-      image4: { node: { sourceUrl: "/images/teo-lounge-before.jpg" } },
+      image1: { node: { sourceUrl: "/images/orkus-regenta-featured.jpg" } },
+      image2: { node: { sourceUrl: "/images/orkus-regenta-lounge.jpg" } },
+      image3: { node: { sourceUrl: "/images/orkus-regenta-bar.jpg" } },
+      image4: { node: { sourceUrl: "/images/orkus-regenta-hotel.jpg" } },
+      image5: { node: { sourceUrl: "/images/orkus-regenta-before.jpg" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Commercial", slug: "commercial" }
+      ]
+    }
+  },
+  {
+    title: "Farmaaish Lounge & Bar Pune",
+    slug: "farmaaish-lounge-bar-pune",
+    featuredImage: "/images/farmaaish-lounge-featured.jpg",
+    projectType: "Hospitality",
+    content: "Spanning 6,000 square feet, Farmaaish Lounge & Bar in Pune offers an immersive, nature-connected hospitality vibe. The design combines customized wood claddings, outdoor-grade deck flooring, warm string lighting setups, and dedicated lounge seating layouts optimized for guest dwell time.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/farmaaish-lounge-featured.jpg" } },
+      image2: { node: { sourceUrl: "/images/farmaaish-lounge-bar.jpg" } },
+      image3: { node: { sourceUrl: "/images/farmaaish-lounge-seating.jpg" } },
+      image4: { node: { sourceUrl: "/images/farmaaish-lounge-interior.jpg" } },
+      image5: { node: { sourceUrl: "/images/farmaaish-lounge-before.jpg" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Commercial", slug: "commercial" }
+      ]
+    }
+  },
+  {
+    title: "My Bar Headquarter Lucknow",
+    slug: "my-bar-headquarter-lucknow",
+    featuredImage: "/images/my-bar-featured.jpg",
+    projectType: "Hospitality",
+    content: "My Bar Headquarter in Lucknow is a spacious 15,000 square foot hospitality destination designed with a rustic, high-energy industrial theme. The space incorporates custom metal frameworks, brick wall elements, neon installations, and central bar fixtures designed to maximize guest seating and efficiency.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/my-bar-featured.jpg" } },
+      image2: { node: { sourceUrl: "/images/my-bar-lounge.jpg" } },
+      image3: { node: { sourceUrl: "/images/my-bar-workspace.jpg" } },
+      image4: { node: { sourceUrl: "/images/my-bar-before.jpg" } },
     },
     serviceTypes: {
       nodes: [

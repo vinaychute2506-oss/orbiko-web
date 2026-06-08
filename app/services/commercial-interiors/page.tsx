@@ -158,11 +158,15 @@ export default function CommercialInteriorsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
                   { title: "Vihaan Heart & Super Specialty Hospital", spec: "Healthcare | Area: 42,000 Sq. ft.", img: "/images/vihaan-hospital-featured.jpg", slug: "vihaan-heart-super-specialty-hospital" },
-                  { title: "Indiabulls Corporate Office", spec: "Corporate Office | Area: 25,000+ Sq. ft.", img: "/images/indiabulls-office-featured.jpg", slug: "indiabulls-corporate-office-delhi" },
-                  { title: "SDM Ayurveda College & Hospital", spec: "Institutional | Area: 65,000+ Sq. ft.", img: "/images/sdm-ayurveda-featured.jpg", slug: "sdm-ayurveda-college-bangalore" },
-                  { title: "Amoeba Game Zone – Multi-City Entertainment Centers", spec: "Gaming & Entertainment | Area: 20,000+ Sq. ft.", img: "/images/amoeba-game-zone-featured.jpg", slug: "amoeba-game-zone-multi-city" },
-                  { title: "Aqua Retreat Resort & Wellness Destination", spec: "Hospitality & Resort | Area: 20,000 Sq. ft.", img: "/images/aqua-retreat-featured.jpg", slug: "aqua-retreat-falta-west-bengal" },
+                  { title: "Indiabulls Corporate Office", spec: "Corporate Office | Area: 25,000+ Sq. ft.", img: "/images/indiabulls-office-featured.jpg", slug: "indiabulls-corporate-office" },
+                  { title: "SDM Ayurveda College Bangalore", spec: "Ayurvedic Hospital | Bangalore", img: "/images/sdm-ayurveda-featured.jpg", slug: "sdm-ayurveda-college-bangalore" },
+                  { title: "Amoeba Game Zone Pune, Gurgaon, Noida & Kolkata", spec: "Entertainment | Area: 20,000+ Sq. ft.", img: "/images/amoeba-game-zone-featured.jpg", slug: "amoeba-game-zone-multi-city" },
+                  { title: "Aqua Retreat Falta, WB", spec: "Leisure Resort | Area: 20,000 Sq. ft.", img: "/images/aqua-retreat-featured.jpg", slug: "aqua-retreat-falta-west-bengal" },
                   { title: "Teo Lounge & Bar", spec: "Hospitality & Lounge | Area: 25,000 Sq. ft.", img: "/images/teo-lounge-featured.jpg", slug: "teo-lounge-bar-punjabi-bagh" },
+                  { title: "Intugine Bangalore", spec: "Corporate Office | Area: 1,500 Sq. ft.", img: "/images/intugine-featured.jpg", slug: "intugine-bangalore" },
+                  { title: "Orkus Regenta Lounge & Bar Hotel Pune", spec: "Hospitality | Area: 25,000 Sq. ft.", img: "/images/orkus-regenta-featured.jpg", slug: "orkus-regenta-lounge-bar-pune" },
+                  { title: "Farmaaish Lounge & Bar Pune", spec: "Hospitality | Area: 6,000 Sq. ft.", img: "/images/farmaaish-lounge-featured.jpg", slug: "farmaaish-lounge-bar-pune" },
+                  { title: "My Bar Headquarter Lucknow", spec: "Hospitality | Area: 15,000 Sq. ft.", img: "/images/my-bar-featured.jpg", slug: "my-bar-headquarter-lucknow" },
                   { title: "Completed Office Interiors", spec: "Corporate Workspace | Multi-Location", img: "/images/about_banner.png", slug: "completed-office-interiors" }
                 ].map((proj, idx) => (
                   <div key={idx} className="group relative aspect-[4/3] bg-card overflow-hidden border border-border/10 rounded-sm shadow-md">

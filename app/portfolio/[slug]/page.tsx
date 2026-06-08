@@ -46,7 +46,8 @@ export default async function PortfolioDetailPage({ params }: Props) {
     project.projectFields?.image2?.node?.sourceUrl,
     project.projectFields?.image3?.node?.sourceUrl,
     project.projectFields?.image4?.node?.sourceUrl,
-    project.projectFields?.image5?.node?.sourceUrl
+    project.projectFields?.image5?.node?.sourceUrl,
+    project.projectFields?.image6?.node?.sourceUrl
   ].filter(Boolean).map(url => ({
     image: { node: { sourceUrl: url as string } },
     title: project.title
