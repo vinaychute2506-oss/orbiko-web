@@ -79,24 +79,6 @@ const SERVICES: Service[] = [
 
 const PROJECTS: Project[] = [
   {
-    title: "Modernist Villa",
-    slug: "modernist-villa",
-    featuredImage: "/images/home_hero.png",
-    projectType: "Residential",
-    content: "A premium open-concept modernist villa design in Bangalore focusing on natural materials, warm beige color palettes, and climate-conscious ventilation panels.",
-    projectFields: {
-      projecttype: "Residential",
-      image1: { node: { sourceUrl: "/images/residential_hero.png" } },
-      image2: { node: { sourceUrl: "/images/turnkey_hero_after.png" } },
-      image3: { node: { sourceUrl: "/images/home_hero.png" } },
-    },
-    serviceTypes: {
-      nodes: [
-        { name: "Residential", slug: "residential" }
-      ]
-    }
-  },
-  {
     title: "Vihaan Heart & Super Specialty Hospital",
     slug: "vihaan-heart-super-specialty-hospital",
     featuredImage: "/images/vihaan-hospital-featured.jpg",
@@ -108,6 +90,7 @@ const PROJECTS: Project[] = [
       image2: { node: { sourceUrl: "/images/vihaan-hospital-lobby.jpg" } },
       image3: { node: { sourceUrl: "/images/vihaan-hospital-corridor.jpg" } },
       image4: { node: { sourceUrl: "/images/vihaan-hospital-before.jpg" } },
+      image5: { node: { sourceUrl: "/images/vihaan-hospital-reel-cover.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -127,6 +110,7 @@ const PROJECTS: Project[] = [
       image2: { node: { sourceUrl: "/images/indiabulls-boardroom.jpg" } },
       image3: { node: { sourceUrl: "/images/indiabulls-workspace.jpg" } },
       image4: { node: { sourceUrl: "/images/indiabulls-office-before.jpg" } },
+      image5: { node: { sourceUrl: "/images/indiabulls-office-reel-cover.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -146,6 +130,7 @@ const PROJECTS: Project[] = [
       image2: { node: { sourceUrl: "/images/sdm-ayurveda-academic-block.jpg" } },
       image3: { node: { sourceUrl: "/images/sdm-ayurveda-hospital-wing.jpg" } },
       image4: { node: { sourceUrl: "/images/sdm-ayurveda-before.jpg" } },
+      image5: { node: { sourceUrl: "/images/sdm-ayurveda-reel-cover.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -165,6 +150,7 @@ const PROJECTS: Project[] = [
       image2: { node: { sourceUrl: "/images/amoeba-game-zone-arcade.jpg" } },
       image3: { node: { sourceUrl: "/images/amoeba-game-zone-bowling.jpg" } },
       image4: { node: { sourceUrl: "/images/amoeba-game-zone-before.jpg" } },
+      image5: { node: { sourceUrl: "/images/amoeba-game-zone-reel-cover.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -184,6 +170,7 @@ const PROJECTS: Project[] = [
       image2: { node: { sourceUrl: "/images/aqua-retreat-resort-view.jpg" } },
       image3: { node: { sourceUrl: "/images/aqua-retreat-wellness-zone.jpg" } },
       image4: { node: { sourceUrl: "/images/aqua-retreat-before.jpg" } },
+      image5: { node: { sourceUrl: "/images/aqua-retreat-reel-cover.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -202,13 +189,12 @@ const PROJECTS: Project[] = [
       image1: { node: { sourceUrl: "/images/teo-lounge-featured.jpg" } },
       image2: { node: { sourceUrl: "/images/teo-main-bar.jpg" } },
       image3: { node: { sourceUrl: "/images/teo-vip-lounge.jpg" } },
-      image4: { node: { sourceUrl: "/images/teo-lounge-image4.jpg" } },
-      image5: { node: { sourceUrl: "/images/teo-lounge-image5.jpg" } },
-      image6: { node: { sourceUrl: "/images/teo-lounge-image6.jpg" } },
+      image4: { node: { sourceUrl: "/images/teo-lounge-before.jpg" } },
+      image5: { node: { sourceUrl: "/images/teo-lounge-reel-cover.jpg" } },
     },
     serviceTypes: {
       nodes: [
-        { name: "Residential", slug: "residential" }
+        { name: "Commercial", slug: "commercial" }
       ]
     }
   },
@@ -224,6 +210,7 @@ const PROJECTS: Project[] = [
       image2: { node: { sourceUrl: "/images/intugine-workspace.jpg" } },
       image3: { node: { sourceUrl: "/images/intugine-lobby.jpg" } },
       image4: { node: { sourceUrl: "/images/intugine-before.jpg" } },
+      image5: { node: { sourceUrl: "/images/intugine-reel-cover.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -244,6 +231,7 @@ const PROJECTS: Project[] = [
       image3: { node: { sourceUrl: "/images/orkus-regenta-bar.jpg" } },
       image4: { node: { sourceUrl: "/images/orkus-regenta-hotel.jpg" } },
       image5: { node: { sourceUrl: "/images/orkus-regenta-before.jpg" } },
+      image6: { node: { sourceUrl: "/images/orkus-regenta-reel-cover.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -264,6 +252,7 @@ const PROJECTS: Project[] = [
       image3: { node: { sourceUrl: "/images/farmaaish-lounge-seating.jpg" } },
       image4: { node: { sourceUrl: "/images/farmaaish-lounge-interior.jpg" } },
       image5: { node: { sourceUrl: "/images/farmaaish-lounge-before.jpg" } },
+      image6: { node: { sourceUrl: "/images/farmaaish-lounge-reel-cover.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -283,6 +272,7 @@ const PROJECTS: Project[] = [
       image2: { node: { sourceUrl: "/images/my-bar-lounge.jpg" } },
       image3: { node: { sourceUrl: "/images/my-bar-workspace.jpg" } },
       image4: { node: { sourceUrl: "/images/my-bar-before.jpg" } },
+      image5: { node: { sourceUrl: "/images/my-bar-reel-cover.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -291,15 +281,19 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    title: "Completed Office Interiors",
-    slug: "completed-office-interiors",
-    featuredImage: "/images/about_banner.png",
-    projectType: "Corporate Workspaces",
-    content: "A selection of modern office fit-outs completed with ergonomic desking, custom-made linear lighting profiles, private acoustic focus chambers, and factory-finished executive storage cabinets.",
+    title: "Corporate Office - Work Lounge",
+    slug: "corporate-office-work-lounge",
+    featuredImage: "/images/office-lounge-featured.jpg",
+    projectType: "Corporate Office",
+    content: "The Corporate Office - Work Lounge project represents a premium workplace redesign designed to encourage collaboration and visual rest. Spanning 12,000 square feet, the interior incorporates custom acoustic panelings, luxury lounge seating clusters, modular coffee bars, and warm architectural lighting. The space was optimized to serve as both an informal meeting area and a focus zone for employees, integrating natural materials and modern design concepts.",
     projectFields: {
       projecttype: "Commercial",
-      image1: { node: { sourceUrl: "/images/about_banner.png" } },
-      image2: { node: { sourceUrl: "/images/commercial_hero.png" } },
+      image1: { node: { sourceUrl: "/images/office-lounge-featured.jpg" } },
+      image2: { node: { sourceUrl: "/images/office-lounge-1.jpg" } },
+      image3: { node: { sourceUrl: "/images/office-lounge-2.jpg" } },
+      image4: { node: { sourceUrl: "/images/office-lounge-3.jpg" } },
+      image5: { node: { sourceUrl: "/images/office-lounge-4.jpg" } },
+      image6: { node: { sourceUrl: "/images/office-lounge-5.jpg" } },
     },
     serviceTypes: {
       nodes: [
@@ -308,19 +302,65 @@ const PROJECTS: Project[] = [
     }
   },
   {
-    title: "Luxe Penthouse",
-    slug: "luxe-penthouse",
-    featuredImage: "/images/residential_hero.png",
-    projectType: "Interior",
-    content: "High-end residential interior fit-out featuring floor-to-ceiling wardrobes, quartz countertops, and smart lighting grids for a custom urban penthouse.",
+    title: "Urban Brew Café Interior",
+    slug: "urban-brew-cafe-interior",
+    featuredImage: "/images/cafe-interior-featured.jpg",
+    projectType: "Café & Restaurant",
+    content: "Urban Brew Café Interior is a vibrant, experiential hospitality space in Bangalore designed to optimize visitor flow and aesthetic appeal. Spanning 3,500 square feet, the design features a signature concrete coffee counter, custom fluted oak wall claddings, comfortable lounge zones, and photo-ready feature walls. Every element, from lighting to seating arrangements, was created to drive dwell time and enhance the café's brand presence.",
     projectFields: {
-      projecttype: "Interior",
-      image1: { node: { sourceUrl: "/images/residential_hero.png" } },
-      image2: { node: { sourceUrl: "/images/home_hero.png" } },
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/cafe-interior-featured.jpg" } },
+      image2: { node: { sourceUrl: "/images/cafe-interior-1.jpg" } },
+      image3: { node: { sourceUrl: "/images/cafe-interior-2.jpg" } },
+      image4: { node: { sourceUrl: "/images/cafe-interior-3.jpg" } },
+      image5: { node: { sourceUrl: "/images/cafe-interior-4.jpg" } },
+      image6: { node: { sourceUrl: "/images/cafe-interior-5.jpg" } },
     },
     serviceTypes: {
       nodes: [
-        { name: "Turnover", slug: "turnover" }
+        { name: "Commercial", slug: "commercial" }
+      ]
+    }
+  },
+  {
+    title: "Lifestyle Retail Store Interior",
+    slug: "lifestyle-retail-store-interior",
+    featuredImage: "/images/retail-store-featured.jpg",
+    projectType: "Retail & Showroom",
+    content: "Lifestyle Retail Store Interior is a luxury showroom design spanning 4,800 square feet, combining high-end apparel display racks and premium jewellery presentation cases. The store layout prioritizes customer wayfinding, utilizing decorative brass accents, custom lighting grids, and Italian marble finishes to elevate product value. Private VIP lounges and trial rooms were designed to deliver a high-touch customer experience.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/retail-store-featured.jpg" } },
+      image2: { node: { sourceUrl: "/images/retail-store-1.jpg" } },
+      image3: { node: { sourceUrl: "/images/retail-store-2.jpg" } },
+      image4: { node: { sourceUrl: "/images/retail-store-3.jpg" } },
+      image5: { node: { sourceUrl: "/images/retail-store-4.jpg" } },
+      image6: { node: { sourceUrl: "/images/retail-store-5.jpg" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Commercial", slug: "commercial" }
+      ]
+    }
+  },
+  {
+    title: "Hotel Corporate Lobby",
+    slug: "hotel-corporate-lobby",
+    featuredImage: "/images/hotel-lobby-featured.jpg",
+    projectType: "Hospitality",
+    content: "The Hotel Corporate Lobby is a sophisticated hospitality zone spanning 8,000 square feet, designed to bridge luxury leisure with business utility. The layout balances cozy private seating sections with a grand reception counter, custom wooden paneling, and dramatic ceiling light fixtures. Special attention was paid to acoustic design and durable commercial-grade materials to support high visitor traffic.",
+    projectFields: {
+      projecttype: "Commercial",
+      image1: { node: { sourceUrl: "/images/hotel-lobby-featured.jpg" } },
+      image2: { node: { sourceUrl: "/images/hotel-lobby-1.jpg" } },
+      image3: { node: { sourceUrl: "/images/hotel-lobby-2.jpg" } },
+      image4: { node: { sourceUrl: "/images/hotel-lobby-3.jpg" } },
+      image5: { node: { sourceUrl: "/images/hotel-lobby-4.jpg" } },
+      image6: { node: { sourceUrl: "/images/hotel-lobby-5.jpg" } },
+    },
+    serviceTypes: {
+      nodes: [
+        { name: "Commercial", slug: "commercial" }
       ]
     }
   }
