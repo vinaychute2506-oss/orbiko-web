@@ -27,18 +27,11 @@ import { ConsultModal } from "@/components/ConsultModal";
 
 // Local image arrays from copied assets
 const livingRoomImages = [
-  "/images/residential/living-room-1.jpg",
-  "/images/residential/living-room-2.jpg",
   "/images/residential/living-room-3.jpg",
-  "/images/residential/living-room-4.jpg",
-  "/images/residential/living-room-5.jpg",
-  "/images/residential/living-room-6.jpg",
-  "/images/residential/living-room-7.jpg",
 ];
 
 const bedroomImages = [
   "/images/residential/bedroom-1.jpg",
-  "/images/residential/bedroom-2.jpg",
   "/images/residential/bedroom-3.jpg",
   "/images/residential/bedroom-4.jpg",
   "/images/residential/bedroom-5.jpg",
@@ -56,8 +49,6 @@ const bedroomImages = [
 const kitchenImages = [
   "/images/residential/kitchen-1.jpg",
   "/images/residential/kitchen-2.jpg",
-  "/images/residential/kitchen-3.jpg",
-  "/images/residential/kitchen-4.jpg",
   "/images/residential/kitchen-5.jpg",
   "/images/residential/kitchen-6.jpg",
   "/images/residential/kitchen-7.jpg",
@@ -68,6 +59,7 @@ const kitchenImages = [
   "/images/residential/kitchen-12.jpg",
 ];
 
+
 interface SlideshowProps {
   title: string;
   images: string[];
@@ -76,16 +68,33 @@ interface SlideshowProps {
 function CategorySlideshow({ title, images }: SlideshowProps) {
   const [startIndex, setStartIndex] = useState(0);
 
+  const showNav = images.length > 4;
+
   const handlePrev = () => {
+    if (!showNav) return;
     setStartIndex((prev) => (prev === 0 ? images.length - 4 : prev - 1));
   };
 
   const handleNext = () => {
+    if (!showNav) return;
     setStartIndex((prev) => (prev >= images.length - 4 ? 0 : prev + 1));
   };
 
   // Ensure we always have exactly 4 images to show
-  const visibleImages = images.slice(startIndex, startIndex + 4);
+  const visibleImages = showNav ? images.slice(startIndex, startIndex + 4) : images;
+
+  // Determine grid columns based on number of visible images
+  const gridColsClass = 
+    visibleImages.length === 1 
+      ? "grid-cols-1 max-w-2xl mx-auto" 
+      : visibleImages.length === 2 
+        ? "grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto" 
+        : visibleImages.length === 3 
+          ? "grid-cols-1 sm:grid-cols-3 max-w-6xl mx-auto" 
+          : "grid-cols-1 sm:grid-cols-2 md:grid-cols-4";
+
+  // Aspect ratio class: single image can be wide aspect-[16/9] for high-end look
+  const aspectClass = visibleImages.length === 1 ? "aspect-[16/9]" : "aspect-[4/3]";
 
   return (
     <div className="space-y-6 pt-12">
@@ -106,33 +115,37 @@ function CategorySlideshow({ title, images }: SlideshowProps) {
 
       <div className="relative group">
         {/* Navigation Buttons */}
-        <button
-          onClick={handlePrev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/90 text-foreground border border-border/10 flex items-center justify-center hover:bg-primary hover:text-background transition-all duration-300 z-10 shadow-md opacity-0 group-hover:opacity-100"
-          aria-label="Previous image"
-        >
-          <ChevronLeft size={16} />
-        </button>
+        {showNav && (
+          <>
+            <button
+              onClick={handlePrev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/90 text-foreground border border-border/10 flex items-center justify-center hover:bg-primary hover:text-background transition-all duration-300 z-10 shadow-md opacity-0 group-hover:opacity-100"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={16} />
+            </button>
 
-        <button
-          onClick={handleNext}
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/90 text-foreground border border-border/10 flex items-center justify-center hover:bg-primary hover:text-background transition-all duration-300 z-10 shadow-md opacity-0 group-hover:opacity-100"
-          aria-label="Next image"
-        >
-          <ChevronRight size={16} />
-        </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/90 text-foreground border border-border/10 flex items-center justify-center hover:bg-primary hover:text-background transition-all duration-300 z-10 shadow-md opacity-0 group-hover:opacity-100"
+              aria-label="Next image"
+            >
+              <ChevronRight size={16} />
+            </button>
+          </>
+        )}
 
         {/* Carousel Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className={`grid gap-6 ${gridColsClass}`}>
           <AnimatePresence mode="popLayout">
-            {visibleImages.map((imgUrl, i) => (
+            {visibleImages.map((imgUrl) => (
               <motion.div
                 key={imgUrl}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4 }}
-                className="aspect-[4/3] bg-card overflow-hidden border border-border/10 rounded-sm shadow-sm relative group/item"
+                className={`${aspectClass} bg-card overflow-hidden border border-border/10 rounded-sm shadow-sm relative group/item`}
               >
                 <img
                   src={imgUrl}
@@ -148,6 +161,7 @@ function CategorySlideshow({ title, images }: SlideshowProps) {
     </div>
   );
 }
+
 
 export default function ResidentialInteriorsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
