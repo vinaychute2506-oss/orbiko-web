@@ -13,10 +13,258 @@ import {
   Users, 
   Clock, 
   Calculator, 
-  Eye 
+  ChevronLeft, 
+  ChevronRight 
 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ConsultModal } from "@/components/ConsultModal";
+
+// Local image arrays from copied assets
+const officeImages = [
+  "/images/commercial/office-1.jpg",
+  "/images/commercial/office-2.jpg",
+  "/images/commercial/office-3.jpg",
+  "/images/commercial/office-4.jpg",
+  "/images/commercial/office-5.jpg",
+  "/images/commercial/office-6.jpg",
+  "/images/commercial/office-7.jpg",
+  "/images/commercial/office-8.jpg",
+  "/images/commercial/office-9.jpg",
+  "/images/commercial/office-10.jpg",
+  "/images/commercial/office-11.jpg",
+  "/images/commercial/office-12.jpg",
+  "/images/commercial/office-13.jpg",
+  "/images/commercial/office-14.jpg",
+  "/images/commercial/office-15.jpg",
+  "/images/commercial/office-16.jpg",
+  "/images/commercial/office-17.jpg",
+  "/images/commercial/office-18.jpg",
+  "/images/commercial/office-19.jpg",
+  "/images/commercial/office-20.jpg",
+  "/images/commercial/office-21.jpg",
+  "/images/commercial/office-22.jpg",
+  "/images/commercial/office-23.jpg",
+];
+
+const cafeImages = [
+  "/images/commercial/cafe-1.jpg",
+  "/images/commercial/cafe-2.jpg",
+  "/images/commercial/cafe-3.jpg",
+  "/images/commercial/cafe-4.jpg",
+  "/images/commercial/cafe-5.jpg",
+  "/images/commercial/cafe-6.jpg",
+  "/images/commercial/cafe-7.jpg",
+  "/images/commercial/cafe-8.jpg",
+  "/images/commercial/cafe-9.jpg",
+  "/images/commercial/cafe-10.jpg",
+  "/images/commercial/cafe-11.jpg",
+  "/images/commercial/cafe-12.jpg",
+  "/images/commercial/cafe-13.jpg",
+  "/images/commercial/cafe-14.jpg",
+  "/images/commercial/cafe-15.jpg",
+  "/images/commercial/cafe-16.jpg",
+  "/images/commercial/cafe-17.jpg",
+  "/images/commercial/cafe-18.jpg",
+  "/images/commercial/cafe-19.jpg",
+  "/images/commercial/cafe-20.jpg",
+  "/images/commercial/cafe-21.jpg",
+  "/images/commercial/cafe-22.jpg",
+  "/images/commercial/cafe-23.jpg",
+  "/images/commercial/cafe-24.jpg",
+  "/images/commercial/cafe-25.jpg",
+];
+
+const retailImages = [
+  "/images/commercial/retail-1.jpg",
+  "/images/commercial/retail-2.jpg",
+  "/images/commercial/retail-3.jpg",
+  "/images/commercial/retail-4.jpg",
+  "/images/commercial/retail-5.jpg",
+  "/images/commercial/retail-6.jpg",
+  "/images/commercial/retail-7.jpg",
+  "/images/commercial/retail-8.jpg",
+  "/images/commercial/retail-9.jpg",
+  "/images/commercial/retail-10.jpg",
+  "/images/commercial/retail-11.jpg",
+  "/images/commercial/retail-12.jpg",
+  "/images/commercial/retail-13.jpg",
+  "/images/commercial/retail-14.jpg",
+  "/images/commercial/retail-15.jpg",
+  "/images/commercial/retail-16.jpg",
+  "/images/commercial/retail-17.jpg",
+  "/images/commercial/retail-18.jpg",
+  "/images/commercial/retail-19.jpg",
+  "/images/commercial/retail-20.jpg",
+  "/images/commercial/retail-21.jpg",
+  "/images/commercial/retail-22.jpg",
+  "/images/commercial/retail-23.jpg",
+  "/images/commercial/retail-24.jpg",
+  "/images/commercial/retail-25.jpg",
+  "/images/commercial/retail-26.jpg",
+  "/images/commercial/retail-27.jpg",
+  "/images/commercial/retail-28.jpg",
+  "/images/commercial/retail-29.jpg",
+  "/images/commercial/retail-30.jpg",
+  "/images/commercial/retail-31.jpg",
+  "/images/commercial/retail-32.jpg",
+  "/images/commercial/retail-33.jpg",
+  "/images/commercial/retail-34.jpg",
+  "/images/commercial/retail-35.jpg",
+  "/images/commercial/retail-36.jpg",
+  "/images/commercial/retail-37.jpg",
+  "/images/commercial/retail-38.jpg",
+  "/images/commercial/retail-39.jpg",
+  "/images/commercial/retail-40.jpg",
+  "/images/commercial/retail-41.jpg",
+  "/images/commercial/retail-42.jpg",
+  "/images/commercial/retail-43.jpg",
+  "/images/commercial/retail-44.jpg",
+  "/images/commercial/retail-45.jpg",
+  "/images/commercial/retail-46.jpg",
+  "/images/commercial/retail-47.jpg",
+  "/images/commercial/retail-48.jpg",
+  "/images/commercial/retail-49.jpg",
+  "/images/commercial/retail-50.jpg",
+  "/images/commercial/retail-51.jpg",
+  "/images/commercial/retail-52.jpg",
+  "/images/commercial/retail-53.jpg",
+  "/images/commercial/retail-54.jpg",
+  "/images/commercial/retail-55.jpg",
+  "/images/commercial/retail-56.jpg",
+  "/images/commercial/retail-57.jpg",
+  "/images/commercial/retail-58.jpg",
+  "/images/commercial/retail-59.jpg",
+];
+
+const lobbyImages = [
+  "/images/commercial/lobby-1.jpg",
+  "/images/commercial/lobby-2.jpg",
+  "/images/commercial/lobby-3.jpg",
+  "/images/commercial/lobby-4.jpg",
+  "/images/commercial/lobby-5.jpg",
+  "/images/commercial/lobby-6.jpg",
+  "/images/commercial/lobby-7.jpg",
+  "/images/commercial/lobby-8.jpg",
+  "/images/commercial/lobby-9.jpg",
+  "/images/commercial/lobby-10.jpg",
+  "/images/commercial/lobby-11.jpg",
+  "/images/commercial/lobby-12.jpg",
+  "/images/commercial/lobby-13.jpg",
+  "/images/commercial/lobby-14.jpg",
+  "/images/commercial/lobby-15.jpg",
+  "/images/commercial/lobby-16.jpg",
+  "/images/commercial/lobby-17.jpg",
+  "/images/commercial/lobby-18.jpg",
+  "/images/commercial/lobby-19.jpg",
+  "/images/commercial/lobby-20.jpg",
+  "/images/commercial/lobby-21.jpg",
+  "/images/commercial/lobby-22.jpg",
+  "/images/commercial/lobby-23.jpg",
+  "/images/commercial/lobby-24.jpg",
+];
+
+interface SlideshowProps {
+  title: string;
+  images: string[];
+}
+
+function CategorySlideshow({ title, images }: SlideshowProps) {
+  const [startIndex, setStartIndex] = useState(0);
+
+  const showNav = images.length > 4;
+
+  const handlePrev = () => {
+    if (!showNav) return;
+    setStartIndex((prev) => (prev === 0 ? images.length - 4 : prev - 1));
+  };
+
+  const handleNext = () => {
+    if (!showNav) return;
+    setStartIndex((prev) => (prev >= images.length - 4 ? 0 : prev + 1));
+  };
+
+  // Ensure we always have exactly 4 images to show
+  const visibleImages = showNav ? images.slice(startIndex, startIndex + 4) : images;
+
+  // Determine grid columns based on number of visible images
+  const gridColsClass = 
+    visibleImages.length === 1 
+      ? "grid-cols-1 max-w-2xl mx-auto" 
+      : visibleImages.length === 2 
+        ? "grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto" 
+        : visibleImages.length === 3 
+          ? "grid-cols-1 sm:grid-cols-3 max-w-6xl mx-auto" 
+          : "grid-cols-1 sm:grid-cols-2 md:grid-cols-4";
+
+  // Aspect ratio class: single image can be wide aspect-[16/9] for high-end look
+  const aspectClass = visibleImages.length === 1 ? "aspect-[16/9]" : "aspect-[4/3]";
+
+  return (
+    <div className="space-y-6 pt-12">
+      <div className="flex justify-between items-end">
+        <h3 className="text-xl md:text-2xl font-heading font-semibold text-foreground tracking-tight">
+          {title}
+        </h3>
+        <div className="flex items-center gap-6">
+          <Link 
+            href="/portfolio?type=commercial"
+            className="text-[9px] uppercase tracking-[0.2em] font-bold text-foreground/50 hover:text-primary transition-colors flex items-center gap-1.5"
+          >
+            <span>View All Projects</span>
+            <ArrowRight size={10} className="text-primary" />
+          </Link>
+        </div>
+      </div>
+
+      <div className="relative group">
+        {/* Navigation Buttons */}
+        {showNav && (
+          <>
+            <button
+              onClick={handlePrev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/90 text-foreground border border-border/10 flex items-center justify-center hover:bg-primary hover:text-background transition-all duration-300 z-10 shadow-md opacity-0 group-hover:opacity-100"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={16} />
+            </button>
+
+            <button
+              onClick={handleNext}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/90 text-foreground border border-border/10 flex items-center justify-center hover:bg-primary hover:text-background transition-all duration-300 z-10 shadow-md opacity-0 group-hover:opacity-100"
+              aria-label="Next image"
+            >
+              <ChevronRight size={16} />
+            </button>
+          </>
+        )}
+
+        {/* Carousel Grid */}
+        <div className={`grid gap-6 ${gridColsClass}`}>
+          <AnimatePresence mode="popLayout">
+            {visibleImages.map((imgUrl) => (
+              <motion.div
+                key={imgUrl}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4 }}
+                className={`${aspectClass} bg-card overflow-hidden border border-border/10 rounded-sm shadow-sm relative group/item`}
+              >
+                <img
+                  src={imgUrl}
+                  alt={`${title} design example`}
+                  className="w-full h-full object-cover group-hover/item:scale-103 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover/item:bg-black/0 transition-colors" />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function CommercialInteriorsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,42 +305,6 @@ export default function CommercialInteriorsPage() {
       category: "Entertainment",
       img: "/images/amoeba-game-zone-featured.jpg",
       slug: "amoeba-game-zone-multi-city"
-    },
-    {
-      num: 5,
-      title: "Corporate Office – Work Lounge",
-      area: "12,000 Sq. ft.",
-      category: "Corporate Office",
-      location: "Bangalore",
-      img: "/images/office-lounge-featured.jpg",
-      slug: "corporate-office-work-lounge"
-    },
-    {
-      num: 6,
-      title: "Urban Brew Café Interior",
-      area: "3,500 Sq. ft.",
-      category: "Café & Restaurant",
-      location: "Bangalore",
-      img: "/images/cafe-interior-featured.jpg",
-      slug: "urban-brew-cafe-interior"
-    },
-    {
-      num: 7,
-      title: "Lifestyle Retail Store Interior",
-      area: "4,800 Sq. ft.",
-      category: "Retail & Showroom",
-      location: "Bangalore",
-      img: "/images/retail-store-featured.jpg",
-      slug: "lifestyle-retail-store-interior"
-    },
-    {
-      num: 8,
-      title: "Hotel Corporate Lobby",
-      area: "8,000 Sq. ft.",
-      category: "Hospitality",
-      location: "Bangalore",
-      img: "/images/hotel-lobby-featured.jpg",
-      slug: "hotel-corporate-lobby"
     }
   ];
 
@@ -319,6 +531,14 @@ export default function CommercialInteriorsPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Carousel Galleries */}
+        <div className="pt-32 space-y-16">
+          <CategorySlideshow title="Office Interiors" images={officeImages} />
+          <CategorySlideshow title="Café & Restaurant Interiors" images={cafeImages} />
+          <CategorySlideshow title="Retail & Showroom Interiors" images={retailImages} />
+          <CategorySlideshow title="Lobby & Bar Interiors" images={lobbyImages} />
         </div>
 
       </Container>
