@@ -43,8 +43,6 @@ interface HeroSectionProps {
 
 export function HeroSection({ settings }: HeroSectionProps) {
   const slides = HERO_SLIDES;
-  // Use settings video if available, else standard elegant loop
-  const videoUrl = settings?.heroVideo ?? "/videos/hero_video.mp4";
   const [current, setCurrent] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -59,19 +57,11 @@ export function HeroSection({ settings }: HeroSectionProps) {
     <section className="relative h-screen min-h-[100dvh] flex flex-col items-center justify-center bg-background overflow-hidden border-b border-border/10">
       {/* Background Media */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {videoUrl ? (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover opacity-[0.4]"
-          >
-            <source src={videoUrl} type="video/mp4" />
-          </video>
-        ) : (
-          <div className="w-full h-full bg-secondary opacity-30" />
-        )}
+        <img
+          src="/images/home_hero_static.jpg"
+          alt="Orbiko Studio Premium Interior Design"
+          className="w-full h-full object-cover opacity-[0.35] brightness-[0.7]"
+        />
         {/* Soft background grid overlay representing architecture plans */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(42,27,21,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(42,27,21,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
         {/* Gradient shield */}
