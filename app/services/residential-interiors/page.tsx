@@ -28,6 +28,9 @@ import { ConsultModal } from "@/components/ConsultModal";
 // Local image arrays from copied assets
 const livingRoomImages = [
   "/images/residential/living-room-3.jpg",
+  "/images/residential/living-room-new-1.jpg",
+  "/images/residential/living-room-new-2.jpg",
+  "/images/residential/living-room-new-3.jpg",
 ];
 
 const bedroomImages = [
